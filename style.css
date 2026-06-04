@@ -70,8 +70,22 @@ body {
 }
 
 /* Η εικόνα της φιγούρας */
+/* Η εικόνα της φιγούρας και το φόντο της */
 .center-col {
     text-align: center;
+}
+
+.avatar-bg {
+    display: inline-block; /* Προσαρμόζει το πλαίσιο ακριβώς στο μέγεθος της εικόνας */
+    background-image: url('grid.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px; /* Δίνει απόσταση ανάμεσα στη φιγούρα και την άκρη του grid */
+    border-radius: 12px; /* Στρογγυλεύει ελαφρώς τις γωνίες του grid */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Προσθέτει μια απαλή σκιά γύρω από το grid */
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .avatar-img {
