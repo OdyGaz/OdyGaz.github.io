@@ -1,0 +1,146 @@
+/* Βασικές ρυθμίσεις σελίδας */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Κεντρικό πλαίσιο βιογραφικού */
+.cv-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+/* Κεφαλίδα */
+.cv-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.cv-header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Διάταξη 3 Στηλών (Grid) */
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 280px 1fr; /* Αριστερά, Κέντρο (εικόνα), Δεξιά */
+    gap: 30px;
+    align-items: center; /* Ευθυγράμμιση στο κέντρο καθ' ύψος */
+}
+
+/* Στήλες */
+.cv-col h2 {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+    margin-top: 0;
+}
+
+.item {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.title-highlight {
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.subtitle {
+    margin: 0 0 5px 0;
+    color: #555;
+}
+
+.details {
+    margin: 0;
+    font-style: italic;
+    color: #777;
+}
+
+/* Η εικόνα της φιγούρας */
+.center-col {
+    text-align: center;
+}
+
+.avatar-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Highlights (Φωσφοριζέ εφέ) */
+.highlight-yellow {
+    background-color: #fff2a3; /* Απαλό κίτρινο */
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.highlight-green {
+    background-color: #d1f7c4; /* Απαλό πράσινο */
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* Διαχωριστική γραμμή */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 40px 0;
+}
+
+/* Κάτω ενότητες */
+.full-width-section h2 {
+    font-size: 1.4rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.skills-grid h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+}
+
+.skills-grid p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Responsive σχεδιασμός για κινητά: οι 3 στήλες γίνονται 1 */
+@media (max-width: 768px) {
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .center-col {
+        order: -1; /* Η εικόνα πάει πρώτη στην κορυφή στα κινητά */
+        margin-bottom: 20px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
