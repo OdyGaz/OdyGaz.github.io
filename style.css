@@ -1,89 +1,88 @@
-/* Βασικές ρυθμίσεις σελίδας */
+/* Βασικές ρυθμίσεις σελίδας με σκούρο γκρι φόντο */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #d1d4db; /* Σκούρο γκρι για το φόντο της σελίδας */
+    color: #222;
     margin: 0;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
-/* Κεντρικό πλαίσιο βιογραφικού */
+/* Κεντρικό πλαίσιο βιογραφικού - Απαλό γκρι του χαρτιού */
 .cv-container {
-    max-width: 900px;
+    max-width: 850px;
     margin: 0 auto;
-    background-color: #ffffff;
-    padding: 40px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
+    background-color: #ededf0; /* Το ελαφρώς γκρι/χαρτί φόντο του CV */
+    padding: 50px 45px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
 }
 
 /* Κεφαλίδα */
 .cv-header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 .header-img {
-    max-width: 100%; /* Προσαρμόζεται στο πλάτος της σελίδας */
+    max-width: 100%;
     height: auto;
     display: inline-block;
-    border-radius: 4px; /* Προαιρετικά: στρογγυλεύει ελαφρώς τις γωνίες της εικόνας */
 }
 
-/* Διάταξη 3 Στηλών (Grid) */
+/* Διάταξη 3 Στηλών (Πάνω Μέρος) */
 .cv-grid {
     display: grid;
-    grid-template-columns: 1fr 280px 1fr; /* Αριστερά, Κέντρο (εικόνα), Δεξιά */
-    gap: 30px;
-    align-items: center; /* Ευθυγράμμιση στο κέντρο καθ' ύψος */
+    grid-template-columns: 1fr 260px 1fr;
+    gap: 25px;
+    align-items: center;
 }
 
 /* Στήλες */
 .cv-col h2 {
-    font-size: 1.3rem;
-    color: #2c3e50;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
+    font-size: 1.25rem;
+    color: #111;
+    border-bottom: 1px solid #999;
+    padding-bottom: 6px;
     margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .item {
     margin-bottom: 20px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.4;
 }
 
 .title-highlight {
     font-weight: bold;
-    margin: 0 0 5px 0;
+    margin: 0 0 4px 0;
 }
 
 .subtitle {
-    margin: 0 0 5px 0;
-    color: #555;
+    margin: 0 0 4px 0;
+    color: #444;
 }
 
 .details {
     margin: 0;
     font-style: italic;
-    color: #777;
+    color: #555;
 }
 
-/* Η εικόνα της φιγούρας */
-/* Η εικόνα της φιγούρας και το φόντο της */
+/* Μεσαία στήλη: Φιγούρα & Grid */
 .center-col {
     text-align: center;
 }
 
 .avatar-bg {
-    display: inline-block; /* Προσαρμόζει το πλαίσιο ακριβώς στο μέγεθος της εικόνας */
+    display: inline-block;
     background-image: url('grid.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 20px; /* Δίνει απόσταση ανάμεσα στη φιγούρα και την άκρη του grid */
-    border-radius: 12px; /* Στρογγυλεύει ελαφρώς τις γωνίες του grid */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Προσθέτει μια απαλή σκιά γύρω από το grid */
+    padding: 10px;
+    border-radius: 8px;
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -95,63 +94,121 @@ body {
     margin: 0 auto;
 }
 
-/* Highlights (Φωσφοριζέ εφέ) */
+/* Highlights (Φωσφοριζέ υπογραμμίσεις) */
 .highlight-yellow {
-    background-color: #fff2a3; /* Απαλό κίτρινο */
-    padding: 2px 6px;
-    border-radius: 3px;
+    background-color: #fce881; /* Πιο έντονο κίτρινο υπογράμμισης */
+    padding: 1px 5px;
+    font-weight: bold;
+    color: #111;
 }
 
 .highlight-green {
-    background-color: #d1f7c4; /* Απαλό πράσινο */
-    padding: 2px 6px;
-    border-radius: 3px;
+    background-color: #b7e8ad; /* Πιο έντονο πράσινο υπογράμμισης */
+    padding: 1px 5px;
+    font-weight: bold;
+    color: #111;
 }
 
-/* Διαχωριστική γραμμή */
+/* Διαχωριστικές γραμμές (Μαύρες λεπτές) */
 .divider {
     border: 0;
     height: 1px;
-    background: #ddd;
-    margin: 40px 0;
+    background: #222;
+    margin: 25px 0;
 }
 
-/* Κάτω ενότητες */
-.full-width-section h2 {
-    font-size: 1.4rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
+/* Ενότητες πλήρους πλάτους (Skills, Publications, Awards) */
+.full-width-section {
+    font-size: 0.85rem;
 }
 
+.section-title {
+    font-size: 1.15rem;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+/* Skills Διάταξη */
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: 1.1fr 1.9fr; /* Μεγαλύτερο πλάτος στη δεξιά στήλη */
+    gap: 25px;
 }
 
-.skills-grid h3 {
-    font-size: 1.1rem;
+.skills-column h3 {
+    font-size: 0.95rem;
     margin-top: 0;
+    margin-bottom: 10px;
 }
 
-.skills-grid p {
-    font-size: 0.9rem;
+.skills-list, .skills-list-two-cols {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
     line-height: 1.5;
-    color: #555;
 }
 
-/* Responsive σχεδιασμός για κινητά: οι 3 στήλες γίνονται 1 */
+.skills-list li {
+    margin-bottom: 4px;
+}
+
+/* Δεξιά στήλη Skills (Computational): 2 στήλες για εξοικονόμηση χώρου */
+.skills-list.multi-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 15px;
+}
+
+/* Publications */
+.orcid-text {
+    font-style: italic;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.publications-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.publications-list li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Awards */
+.awards-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.awards-list li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Responsive για κινητά */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .cv-container {
+        padding: 25px 20px;
+    }
     .cv-grid {
         grid-template-columns: 1fr;
     }
-    
     .center-col {
-        order: -1; /* Η εικόνα πάει πρώτη στην κορυφή στα κινητά */
+        order: -1;
         margin-bottom: 20px;
     }
-    
     .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .skills-list.multi-col {
         grid-template-columns: 1fr;
     }
 }
