@@ -23,14 +23,11 @@ body {
     margin-bottom: 40px;
 }
 
-.cv-header h1 {
-    font-size: 2.2rem;
-    letter-spacing: 2px;
-    margin: 0;
-    color: #2c3e50;
-    border-bottom: 2px solid #333;
+.header-img {
+    max-width: 100%; /* Προσαρμόζεται στο πλάτος της σελίδας */
+    height: auto;
     display: inline-block;
-    padding-bottom: 5px;
+    border-radius: 4px; /* Προαιρετικά: στρογγυλεύει ελαφρώς τις γωνίες της εικόνας */
 }
 
 /* Διάταξη 3 Στηλών (Grid) */
