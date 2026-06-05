@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - Odisea Gazeli</title>
+    <meta property="og:title" content="Odisea Gazeli - Curriculum Vitae">
+    <meta property="og:description" content="Personal CV of Odisea Gazeli.">
+    <meta property="og:image" content="https://odygaz.github.io/assets/preview.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="627">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://odygaz.github.io/">
+    
+    <!-- Google Fonts (Ίδια με το Publications) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Σύνδεση με το ενιαίο CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <div class="magazine-layout">
+        <div class="magazine-container">
+            
+            <!-- ΚΟΙΝΗ ΚΕΦΑΛΙΔΑ ΠΕΡΙΟΔΙΚΟΥ (Masthead & Μενού Πλοήγησης) -->
+            <header class="magazine-header">
+                <div class="header-meta">
+                    <span class="meta-left">PORTFOLIO VOL. 1</span>
+                    <span class="meta-center">https://odygaz.github.io/</span>
+                    <span class="meta-right">Bologna • Nicosia • Jaén • Patras</span>
+                </div>
+                <hr class="header-line">
+                <h1 class="magazine-title">Odhisea Gazeli</h1>
+                <p class="magazine-tagline">PLASMA PHYSICS • PHOTONICS • ANALYTICAL CHEMISTRY</p>
+                <hr class="header-line">
+                
+                <!-- Μενού Πλοήγησης (Ίδιο με το Publications) -->
+                <nav class="magazine-nav">
+                    <a href="../index.html" class="nav-column">
+                        <span class="column-num">Home</span>
+                        <h2 class="column-title">BACK TO COVER</h2>
+                        <p class="column-desc">Return to the interactive magazine cover.</p>
+                    </a>
+                    <a href="cv.html" class="nav-column">
+                        <span class="column-num">I</span>
+                        <h2 class="column-title">CURRICULUM VITAE</h2>
+                        <p class="column-desc">Academic background, plasma physics diagnostics & publications.</p>
+                    </a>
+                    <a href="teaching.html" class="nav-column">
+                        <span class="column-num">II</span>
+                        <h2 class="column-title">TEACHING & ANIPHYS</h2>
+                        <p class="column-desc">Interactive physics simulations, university tutorials & animations.</p>
+                    </a>
+                    <a href="portfolio.html" class="nav-column">
+                        <span class="column-num">III</span>
+                        <h2 class="column-title">PORTFOLIO & ART</h2>
+                        <p class="column-desc">Hand-drawn sketches, mechanical automata & scientific posters.</p>
+                    </a>
+                </nav>
+            </header>
+
+            <!-- ΠΕΡΙΕΧΟΜΕΝΟ CV (Από εδώ και κάτω μεταβαίνει στο γκρι φόντο χαρτιού) -->
+            <div class="cv-page-content">
+                
+                <!-- 1. ΠΑΝΩ ΜΕΡΟΣ: 3 Στήλες (Education - Avatar - Experience) -->
+                <div class="cv-grid">
+                    
+                    <!-- Αριστερή Στήλη: Education -->
+                    <section class="cv-col left-col">
+                        <h2>Education</h2>
+                        <div class="curve-left"></div>
+                        
+                        <div class="item">
+                            <p class="title-highlight"><span class="highlight-yellow">Joint PhD, Plasma Physics & Applications</span> | 2020 – Present</p>
+                            <p class="subtitle">University of Cyprus, Cyprus & University of Jaén, Spain</p>
+                        </div>
+
+                        <div class="item">
+                            <p class="title-highlight"><span class="highlight-yellow">MSc, Physics (Photonics & Lasers)</span> | 2016 – 2019</p>
+                            <p class="subtitle">University of Patras, Greece</p>
+                            <p class="details">Thesis: "Elemental analysis of liquid metallurgical slag by laser-induced plasma technique (LIBS)"</p>
+                        </div>
+
+                        <div class="item">
+                            <p class="title-highlight"><span class="highlight-yellow">BSc, Physics</span> | 2007 – 2016</p>
+                            <p class="subtitle">University of Patras, Greece</p>
+                        </div>
+                    </section>
+
+                    <!-- Μεσαία Στήλη: Το Avatar με το Grid από πίσω -->
+                    <section class="cv-col center-col">
+                        <div class="avatar-bg">
+                            <img src="../assets/images/avatar.png" alt="Lego Avatar" class="avatar-img">
+                        </div>
+                    </section>
+
+                    <!-- Δεξιά Στήλη: Professional Experience -->
+                    <section class="cv-col right-col">
+                        <h2>Professional Experience</h2>
+                        <div class="curve-right"></div> 
+
+                        <div class="item">
+                            <p class="title-highlight"><span class="highlight-green">Research Fellow</span> | Feb 2025 – Jun 2026</p>
+                            <p class="subtitle">Department of Industrial Engineering, University of Bologna, Italy</p>
+                        </div>
+
+                        <div class="item">
+                            <p class="title-highlight"><span class="highlight-green">Special Scientist & Teaching Assistant</span> | Oct 2019 – Present</p>
+                            <p class="subtitle">FOSS Research Centre & Dept. of ECE, University of Cyprus, Cyprus</p>
+                        </div>
+                    </section>
+
+                </div>
+
+                <hr class="divider">
+
+                <!-- 2. ΜΕΣΑΙΟ ΜΕΡΟΣ: ΔΙΑΔΡΑΣΤΙΚΟ DOSSIER (TABS) -->
+                <section class="cv-tabs-section">
+                    
+                    <div class="tabs-navigation">
+                        <button class="tab-btn active" data-tab="projects">Projects & Grants</button>
+                        <button class="tab-btn" data-tab="teaching">Teaching & Tutoring</button>
+                        <button class="tab-btn" data-tab="skills">Skills & Softwares</button>
+                        <button class="tab-btn" data-tab="conferences">Conferences & Seminars</button>
+                    </div>
+                    
+                    <div class="tabs-content">
+                        
+                        <!-- TAB 1: Projects & Grants -->
+                        <div class="tab-pane active" id="projects">
+                            <div class="projects-grid">
+                                <a href="https://cordis.europa.eu/project/id/101099313/results" target="_blank" class="project-item linkable">
+                                    <span class="project-num">[4]</span>
+                                    <h3>Plasma reconfigurable metasurface technologies (PULSE) ↗</h3>
+                                    <p class="project-meta">Funded under The European Innovation Council (EIC)</p>
+                                </a>
+                                <a href="https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/projects-details/43353764/101083132/ERASMUS2027?order=DESC&pageNumber=1&pageSize=50&sortBy=title&keywords=101083132&isExactMatch=true" target="_blank" class="project-item linkable">
+                                    <span class="project-num">[3]</span>
+                                    <h3>Pythagoras Erasmus+ project ↗</h3>
+                                    <p class="project-meta">Co-funded by the European Union under the ERASMUS-EDU 2022-CBHE grant</p>
+                                </a>
+                                <a href="https://cordis.europa.eu/project/id/810686" target="_blank" class="project-item linkable">
+                                    <span class="project-num">[2]</span>
+                                    <h3>Twinning in atmospheric Plasma science and applications (TImPANI) ↗</h3>
+                                    <p class="project-meta">Funded by the European Union under HORIZON 2020</p>
+                                </a>
+                                <a href="https://ec.europa.eu/regional_policy/in-your-country/programmes/2014-2020/el/2014gr16m2op001_en" target="_blank" class="project-item linkable">
+                                    <span class="project-num">[1]</span>
+                                    <h3>COMPETITIVENESS, ENTREPRENEURSHIP AND INNOVATION OP ↗</h3>
+                                    <p class="project-meta">Funded by Greece and the European Union</p>
+                                </a>
+                            </div>                      
+                        </div>
+                        
+                        <!-- TAB 2: Teaching & Tutoring -->
+                        <div class="tab-pane" id="teaching">
+                            <div class="teaching-grid">
+                                <div class="teaching-col">
+                                    <h3><span class="highlight-green">Teaching Assistant (UCY)</span></h3>
+                                    <ul class="teaching-list">
+                                        <li><strong>ECE 331</strong> - Electromagnetic Fields</li>
+                                        <li><strong>ECE 370</strong> - Introduction to Biomedical Engineering</li>
+                                        <li><strong>ECE 220</strong> - Signals and Systems I</li>
+                                        <li><strong>ECE 478</strong> - Digital Image Processing</li>
+                                        <li><strong>ECE 333</strong> - Photonics</li>
+                                    </ul>
+                                </div>
+                                <div class="teaching-col">
+                                    <h3><span class="highlight-yellow">Personal Tutor (University Level)</span></h3>
+                                    <ul class="teaching-list teaching-multi-col">
+                                        <li>Information Theory</li>
+                                        <li>Tensor Analysis</li>
+                                        <li>Astrophysics</li>
+                                        <li>MATLAB</li>
+                                        <li>Mathematical Methods</li>
+                                        <li>Space Plasma Physics</li>
+                                        <li>Discrete Mathematics</li>
+                                        <li>Computer Architecture</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- TAB 3: Skills & Softwares -->
+                        <div class="tab-pane" id="skills">
+                            <div class="skills-tab-grid">
+                                <div class="skills-group">
+                                    <h4>Operating Systems & Suites</h4>
+                                    <p>Microsoft Windows, Microsoft Office, Scrivener, Overleaf (LaTeX)</p>
+                                </div>
+                                <div class="skills-group">
+                                    <h4>Technical Drawing (Low to Medium)</h4>
+                                    <p>Autodesk Inventor, SolidWorks, Google SketchUp</p>
+                                </div>
+                                <div class="skills-group">
+                                    <h4>Programming (MATLAB - High, Python - Mid, Arduino - Hobby)</h4>
+                                    <p>MATLAB, Python, Arduino</p>
+                                </div>
+                                <div class="skills-group">
+                                    <h4>Data Analysis & Computational</h4>
+                                    <p>OriginLab, COMSOL Multiphysics, Mendeley, Zotero, Obsidian</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- TAB 4: Conferences & Seminars (WITH FILTERS) -->
+                        <div class="tab-pane" id="conferences">
+                            
+                            <div class="conf-filters">
+                                <button class="filter-btn active" data-filter="all">All</button>
+                                <button class="filter-btn" data-filter="oral">Oral Presentations</button>
+                                <button class="filter-btn" data-filter="poster">Poster Presentations</button>
+                                <button class="filter-btn" data-filter="seminar">Seminars & Webinars</button>
+                            </div>
+                            
+                            <div class="conf-list">
+                                <!-- ORAL PRESENTATIONS -->
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2026</span>
+                                    <p class="conf-details"><em>OpenFOAM-based framework for modelling low temperature plasmas</em> | <strong>Oral</strong> | ESCAMPIG XXVII, Portugal</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2026</span>
+                                    <p class="conf-details"><em>OES of Low-Pressure DC Argon Plasmas for Reconfigurable Technologies</em> | <strong>Oral</strong> | PULSE meeting, Online</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2025</span>
+                                    <p class="conf-details"><em>OES of Low-Pressure DC Argon Plasmas for Reconfigurable Technologies</em> | <strong>Oral</strong> | PULSE Review, Bologna</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2025</span>
+                                    <p class="conf-details"><em>Two-dimensional distribution of atomic nitrogen absolute density in DC MHCD</em> | <strong>Oral</strong> | PLATHINIUM, France</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2025</span>
+                                    <p class="conf-details"><em>Calculation of Electron Density by Stark Broadening method</em> | <strong>Oral</strong> | PULSE Annual Meeting, Madrid</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2024</span>
+                                    <p class="conf-details"><em>Numerical modeling of plasma and applications in analytical chemistry</em> | <strong>Oral</strong> | Ain Shams University, Tunisia</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2024</span>
+                                    <p class="conf-details"><em>Analytical chemical detection methods using Ambient Ionization MS</em> | <strong>Oral</strong> | Ain Shams University, Egypt</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2023</span>
+                                    <p class="conf-details"><em>Understanding Desorption & Ionization Mechanisms of Plasma Sources in MS</em> | <strong>Oral</strong> | Workshop on Numerical Methods, Cyprus</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2023</span>
+                                    <p class="conf-details"><em>Low Temperature Plasma probe: investigation of desorption mechanisms</em> | <strong>Oral</strong> | Plasma Physics & Applications, Romania</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2022</span>
+                                    <p class="conf-details"><em>In silico modelling of cancer cell response to cold helium plasma jet</em> | <strong>Oral</strong> | VPH 2022, Portugal</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2022</span>
+                                    <p class="conf-details"><em>An in-silico approach to quantify apoptotic effects of cold plasma jet</em> | <strong>Oral</strong> | WCCM-XV, Japan</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2022</span>
+                                    <p class="conf-details"><em>Interrogating an in-silico model for melanoma cancer cell response</em> | <strong>Oral</strong> | WCB 2022, Taipei</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2021</span>
+                                    <p class="conf-details"><em>Controlled atmosphere flexible microtubule plasma ionization source</em> | <strong>Oral</strong> | STARSS, Czech Republic</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2021</span>
+                                    <p class="conf-details"><em>Plasma fluid and solid tumor models to study reactive species diffusion</em> | <strong>Oral</strong> | IWPCT, Spain</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2020</span>
+                                    <p class="conf-details"><em>Numerical investigation of plasma processes in a flexible dielectric tube</em> | <strong>Oral</strong> | ESCAMPIG XXV, France</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2019</span>
+                                    <p class="conf-details"><em>Controlling geographic origin of agricultural products using LIBS & ML</em> | <strong>Oral</strong> | Conf. of Chemical Engineering, Greece</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2018</span>
+                                    <p class="conf-details"><em>Applications of LIBS for recycling and food analysis</em> | <strong>Oral</strong> | Workshop of Graduates, Greece</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2017</span>
+                                    <p class="conf-details"><em>Laser Induced Breakdown Spectroscopy for Analytical Applications</em> | <strong>Oral</strong> | Workshop of Graduates, Greece</p>
+                                </div>
+                                <div class="conf-item" data-category="oral">
+                                    <span class="conf-year">2017</span>
+                                    <p class="conf-details"><em>Non-ferrous slag analysis using Laser-Induced Breakdown Spectroscopy</em> | <strong>Oral</strong> | EMSLIBS, Italy</p>
+                                </div>
+
+                                <!-- POSTER PRESENTATIONS -->
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2026</span>
+                                    <p class="conf-details"><em>Additive Manufacturing of 3D DBD Micro-plasma Sources</em> | <strong>Poster</strong> | FLTPD XVI, Netherlands</p>
+                                </div>
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2025</span>
+                                    <p class="conf-details"><em>Rapid characterization of cannabis products using ambient ionization MS</em> | <strong>Poster</strong> | 1st Chemistry Conf., Cyprus</p>
+                                </div>
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2024</span>
+                                    <p class="conf-details"><em>Analytical chemical detection methods using Ambient Ionization MS</em> | <strong>Poster</strong> | Ain Shams University, Egypt</p>
+                                </div>
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2022</span>
+                                    <p class="conf-details"><em>An absolute quantitative approach to study desorption in plasma-based MS</em> | <strong>Poster</strong> | ASMS, USA</p>
+                                </div>
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2020</span>
+                                    <p class="conf-details"><em>Detection of Volatile Compounds as Cancer Biomarkers in Saliva using CAFuTP</em> | <strong>Poster</strong> | ICPM, South Korea</p>
+                                </div>
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2019</span>
+                                    <p class="conf-details"><em>Separation and classification of plastics through laser induced plasma spectroscopy</em> | <strong>Poster</strong> | Conf. of Chemical Engineering, Greece</p>
+                                </div>
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2018</span>
+                                    <p class="conf-details"><em>Applications of LIBS for recycling and food analysis</em> | <strong>Poster</strong> | Workshop of Graduates, Greece</p>
+                                </div>
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2017</span>
+                                    <p class="conf-details"><em>Laser Induced Breakdown Spectroscopy for Analytical Applications</em> | <strong>Poster</strong> | Scientific Conf. ITE, Greece</p>
+                                </div>
+                                <div class="conf-item" data-category="poster">
+                                    <span class="conf-year">2017</span>
+                                    <p class="conf-details"><em>Comparison between two PLS regression approaches for chemical quantification</em> | <strong>Poster</strong> | EUROMAT, Greece</p>
+                                </div>
+
+                                <!-- SEMINARS & WEBINARS -->
+                                <div class="conf-item" data-category="seminar">
+                                    <span class="conf-year">2020-2024</span>
+                                    <p class="conf-details"><em>9 Specialized Academic Seminars (UCY, Imperial College London, NTUA)</em> | <strong>Seminar</strong></p>
+                                </div>
+                                <div class="conf-item" data-category="seminar">
+                                    <span class="conf-year">2020-2021</span>
+                                    <p class="conf-details"><em>19 Scientific Webinars attended (COMSOL, ISAS Leibniz-Institut, Relyon Plasma)</em> | <strong>Webinar</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="divider">
+
+                <!-- 3. ΚΑΤΩ ΜΕΡΟΣ: HONORS, REVIEWS & CREDENTIALS -->
+                <section class="cv-honors-certs-section">
+                    <h2 class="section-title">Honors, Reviews & Credentials</h2>
+                    
+                    <div class="honors-certs-grid">
+                        
+                        <!-- Αριστερή Στήλη: Peer Review & IOP Awards -->
+                        <div class="honors-col">
+                            <h3>Peer Review & Outstanding Reviewer Status</h3>
+                            <div class="reviewer-badge-container">
+                                <p class="reviewer-highlight"><strong>Outstanding Reviewer Award</strong> | IOP Publishing (2021, 2024, 2025, 2026)</p>
+                                <p class="reviewer-highlight"><strong>Trusted Reviewer Status</strong> | IOP Publishing</p>
+                            </div>
+                            <ul class="journals-reviewed-list">
+                                <li>Machine Learning: Engineering (×1)</li>
+                                <li>Engineering Research Express (×1)</li>
+                                <li>Journal of Physics D: Applied Physics (×6)</li>
+                                <li>Plasma Physics and Controlled Fusion (×1)</li>
+                                <li>Discover Materials (×1)</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Δεξιά Στήλη: Featured Certificates (Το Πλέγμα με τα 5 Επιλεγμένα Πιστοποιητικά) -->
+                        <div class="certs-col">
+                            <h3>Featured Certificates</h3>
+                            <div class="featured-certs-grid">
+                                
+                                <!-- 1. MATLAB - Solving ODEs -->
+                                <div class="cert-card">
+                                    <img src="../assets/images/cert-matlab-ode.png" alt="MathWorks MATLAB ODE Certificate" class="cert-thumb">
+                                    <span class="cert-caption">MATLAB - Solving ODEs</span>
+                                </div>
+                                
+                                <!-- 2. MATLAB - Linear Algebra -->
+                                <div class="cert-card">
+                                    <img src="../assets/images/cert-matlab-algebra.png" alt="MathWorks MATLAB Linear Algebra Certificate" class="cert-thumb">
+                                    <span class="cert-caption">MATLAB - Linear Algebra</span>
+                                </div>
+                                
+                                <!-- 3. IOP Reviewer Award 2024 -->
+                                <div class="cert-card">
+                                    <img src="../assets/images/cert-iop-2024.png" alt="IOP Outstanding Reviewer 2024" class="cert-thumb">
+                                    <span class="cert-caption">IOP Reviewer Award 2024</span>
+                                </div>
+                                
+                                <!-- 4. IOP Trusted Reviewer -->
+                                <div class="cert-card">
+                                    <img src="../assets/images/cert-iop-trusted.png" alt="IOP Trusted Reviewer Certificate" class="cert-thumb">
+                                    <span class="cert-caption">IOP Trusted Reviewer Status</span>
+                                </div>
+                                
+                                <!-- 5. IOP Reviewer Award 2021 -->
+                                <div class="cert-card">
+                                    <img src="../assets/images/cert-iop-2021.png" alt="IOP Outstanding Reviewer 2021" class="cert-thumb">
+                                    <span class="cert-caption">IOP Reviewer Award 2021</span>
+                                </div>
+                                
+                            </div>
+                            
+                            <button id="view-all-certs-btn" class="view-all-certs-btn">View All Certificates ↗</button>
+                        </div>
+                        
+                    </div>
+                </section>
+
+            </div> <!-- Τέλος cv-page-content -->
+
+        </div> <!-- Τέλος magazine-container -->
+    </div> <!-- Τέλος magazine-layout -->
+
+    <!-- MODAL OVERLAY (Για το Κολλάζ των 24 Πιστοποιητικών) -->
+    <div id="certs-modal" class="certs-modal">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <div class="modal-content">
+            <img src="../assets/images/collage-certs.png" alt="All 24 Certificates Collage" class="modal-img">
+        </div>
+    </div>
+
+    <!-- Σύνδεση με το κεντρικό JavaScript -->
+    <script src="../assets/js/main.js"></script>
+
+</body>
+</html>
