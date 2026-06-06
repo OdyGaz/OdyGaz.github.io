@@ -1,172 +1,1416 @@
 /* ==========================================================================
- 1. ΓΕΝΙΚΕΣ ΡΥΘΜΙΣΕΙΣ & ΓΡΑΜΜΑΤΟΣΕΙΡΕΣ (BASE STYLES)
- ========================================================================== */
+   1. ΓΕΝΙΚΕΣ ΡΥΘΜΙΣΕΙΣ & ΓΡΑΜΜΑΤΟΣΕΙΡΕΣ (BASE STYLES)
+   ========================================================================== */
 
 html {
-  scrollbar-gutter: stable; /* Δεσμεύει μόνιμα χώρο για το scrollbar, αποτρέποντας το οριζόντιο πήδημα */
+    scrollbar-gutter: stable; /* Δεσμεύει μόνιμα χώρο για το scrollbar, αποτρέποντας το οριζόντιο πήδημα */
 }
 
 body {
-  font-family: 'Inter', 'Arial', sans-serif;
-  background-color: #d1d4db; /* Σκούρο γκρι φόντο σελίδας */
-  color: #222;
-  margin: 0;
-  padding: 40px 20px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    background-color: #d1d4db; /* Σκούρο γκρι φόντο σελίδας */
+    color: #222;
+    margin: 0;
+    padding: 40px 20px;
 }
 
 /* ==========================================================================
- 2. ΑΡΧΙΚΗ ΣΕΛΙΔΑ - MAGAZINE LAYOUT (index.html)
- ========================================================================== */
-
+   2. ΑΡΧΙΚΗ ΣΕΛΙΔΑ - MAGAZINE LAYOUT (index.html)
+   ========================================================================== */
 .magazine-layout {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Αλλαγή από center σε flex-start για να κλειδώσει η κορυφή του header */
-  min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Αλλαγή από center σε flex-start για να κλειδώσει η κορυφή του header */
+    min-height: 100vh;
 }
 
 .magazine-container {
-  width: 100%;
-  max-width: 1050px; /* Ενοποιημένο πλάτος 1050px για όλες τις σελίδες */
-  background-color: #fff;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+    width: 100%;
+    max-width: 1050px; /* Ενοποιημένο πλάτος 1050px για όλες τις σελίδες */
+    background-color: #fff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Λευκό Header */
 .magazine-header {
-  background-color: #fff;
-  padding: 30px 40px 15px 40px;
-  text-align: center;
-  position: relative;
-  z-index: 100; /* Διασφαλίζει ότι τα αναδυόμενα στοιχεία θα εμφανίζονται πάνω από το Hero */
+    background-color: #fff;
+    padding: 30px 40px 15px 40px;
+    text-align: center;
 }
 
 .header-meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 1.5px;
-  color: #555;
-  text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: #555;
+    text-transform: uppercase;
 }
 
 .header-line {
-  border: 0;
-  border-top: 1px solid #111;
-  margin: 12px 0;
+    border: 0;
+    border-top: 1px solid #111;
+    margin: 12px 0;
 }
 
 .magazine-title {
-  font-family: 'Playfair Display', 'Georgia', serif;
-  font-size: 3.25rem;
-  font-weight: 700;
-  margin: 8px 0;
-  color: #111;
-  letter-spacing: -1px;
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 3.25rem;
+    font-weight: 700;
+    margin: 8px 0;
+    color: #111;
+    letter-spacing: -1px;
 }
 
 .magazine-tagline {
-  font-size: 0.72rem;
-  letter-spacing: 3.5px;
-  font-weight: 600;
-  color: #333;
-  margin: 10px 0;
-  text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 3.5px;
+    font-weight: 600;
+    color: #333;
+    margin: 10px 0;
+    text-transform: uppercase;
 }
 
 /* 4-στηλο Μενού Πλοήγησης */
 .magazine-nav {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  text-align: left;
-  margin-top: 15px;
-  position: relative;
-  z-index: 100; /* Διασφαλίζει τη σωστή στοίβαξη των επιπέδων */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    text-align: left;
+    margin-top: 15px;
 }
 
 .nav-column {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: #111;
-  transition: opacity 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #111;
+    transition: opacity 0.2s ease;
 }
 
-/* Μόνο οι απλοί σύνδεσμοι γίνονται ημιδιαφανείς στο hover */
-a.nav-column:hover {
-  opacity: 0.7;
-}
-
-/* Ρυθμίσεις για τη νέα στήλη Contact (div αντί για a) */
-.contact-column {
-  cursor: default;
-}
-
-.contact-column:hover {
-  opacity: 1; /* Αποτροπή του fade σε όλη τη στήλη */
+.nav-column:hover {
+    opacity: 0.7;
 }
 
 .column-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.1rem;
-  font-style: italic;
-  color: #888;
-  margin-bottom: 4px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #888;
+    margin-bottom: 4px;
 }
 
 .column-title {
-  font-size: 0.72rem;
-  font-weight: 600;
-  margin: 0 0 6px 0;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
-}
-
-/* Ο τίτλος CONTACT ως link */
-.column-title-link {
-  text-decoration: none;
-  color: inherit;
-  transition: opacity 0.2s ease;
-}
-
-.column-title-link:hover {
-  opacity: 0.7; /* Matches the visual hover of other columns */
+    font-size: 0.72rem;
+    font-weight: 600;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
 }
 
 .column-desc {
-  font-size: 0.62rem;
-  color: #666;
-  margin: 0;
-  line-height: 1.3;
-  font-weight: 300;
+    font-size: 0.62rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.3;
+    font-weight: 300;
 }
 
-/* Στοίβαξη του κειμένου και των links στο ίδιο σημείο */
-.contact-content-wrapper {
-  display: grid;
-  grid-template-areas: "stack";
-  margin-top: 10px;
+/* Hero Image */
+.magazine-hero {
+    position: relative;
+    width: 100%;
+    line-height: 0; /* Αφαιρεί κενά κάτω από την εικόνα */
+}
+
+.hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Αόρατο clickable κουμπί πάνω από το Barcode */
+.barcode-hitbox {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+    width: 11%;
+    height: 17%;
+    z-index: 10;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.barcode-hitbox:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ==========================================================================
+   3. ΣΕΛΙΔΑ ΔΗΜΟΣΙΕΥΣΕΩΝ - SPREAD LAYOUT (pages/publications.html)
+   ========================================================================== */
+.magazine-spread {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* 2 στήλες: Άρθρο & Παιχνίδι */
+    gap: 30px;
+    padding: 20px 40px 40px 40px;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+
+/* Αριστερή Στήλη: Το Άρθρο */
+.spread-article {
+    text-align: left;
+    border-right: 1px solid #eee;
+    padding-right: 25px;
+}
+
+.article-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.article-intro {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* Λίστα Δημοσιεύσεων */
+.publications-paper-list {
+    max-height: 550px; /* Scrollable λίστα */
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Webkit Scrollbar για την αισθητική του περιοδικού */
+.publications-paper-list::-webkit-scrollbar {
+    width: 6px;
+}
+.publications-paper-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+.publications-paper-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.publications-paper-list::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+.year-group {
+    margin-bottom: 25px;
+}
+
+.year-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+    border-bottom: 1px solid #111;
+    padding-bottom: 4px;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.paper-item {
+    position: relative;
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+    border-left: 2px solid #ddd;
+    border-radius: 0 4px 4px 0;
+    transition: all 0.3s ease;
+}
+
+.paper-num {
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #888;
+}
+
+.paper-text {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    margin: 0 0 6px 0;
+    color: #333;
+}
+
+.paper-text strong {
+    color: #111;
+}
+
+.paper-doi {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.paper-doi:hover {
+    color: #555;
+    text-decoration: underline;
+}
+
+/* Εφέ Highlight όταν μια φυσαλίδα δείχνει ένα paper */
+.paper-item.highlighted-by-game {
+    background-color: #fce881; /* Κίτρινο highlight */
+    border-left-color: #111;
+    transform: translateX(4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Δεξιά Στήλη: Το Παιχνίδι */
+.spread-interactive {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.game-wrapper {
+    position: sticky;
+    top: 20px; /* Μένει σταθερό κατά το σκρολάρισμα */
+}
+
+.game-canvas {
+    position: relative;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    line-height: 0;
+}
+
+.game-bg-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.game-instructions {
+    font-size: 0.7rem;
+    line-height: 1.4;
+    color: #666;
+    margin-top: 15px;
+    background-color: #f9f9f9;
+    padding: 10px 12px;
+    border-radius: 4px;
+    border-left: 2px solid #aaa;
+}
+
+/* Στοιχεία Φυσαλίδας (Glowing Bubble) */
+.glowing-bubble {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    transform: scale(1);
+    opacity: 0.9;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    animation: floatBubble 4s ease-in-out infinite alternate;
+}
+
+.glowing-bubble:hover {
+    transform: scale(1.3);
+    opacity: 1;
+    z-index: 30;
+}
+
+/* Tooltip Φυσαλίδας */
+.bubble-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    background-color: rgba(17, 17, 17, 0.95);
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 4px;
+    font-size: 0.65rem;
+    line-height: 1.3;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    pointer-events: none;
+}
+
+.bubble-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(17, 17, 17, 0.95) transparent transparent transparent;
+}
+
+.glowing-bubble:hover .bubble-tooltip {
+    display: block;
+}
+
+.click-prompt {
+    display: inline-block;
+    margin-top: 4px;
+    color: #fce881;
+    font-weight: 600;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+}
+
+/* Κίνηση αιώρησης φυσαλίδων */
+@keyframes floatBubble {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+/* ==========================================================================
+   4. ΣΕΛΙΔΑ ΒΙΟΓΡΑΦΙΚΟΥ (pages/cv.html)
+   ========================================================================== */
+.cv-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background-color: #ededf0; /* Το ελαφρώς γκρι/χαρτί φόντο του CV */
+    padding: 40px 45px 50px 45px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+/* Κουμπί Επιστροφής στην Αρχική - Minimal Outline */
+.back-home-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #222;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    border: 1px solid #888;
+    border-radius: 4px;
+    padding: 6px 14px;
+    background-color: transparent;
+    margin-bottom: 25px;
+    transition: all 0.2s ease;
+}
+
+.back-home-btn:hover {
+    color: #fff;
+    background-color: #111;
+    border-color: #111;
+}
+
+.cv-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header-img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+/* Διάταξη 3 Στηλών (Πάνω Μέρος) */
+.cv-grid {
+    display: grid;
+    grid-template-columns: 1fr 260px 1fr;
+    gap: 25px;
+    align-items: center;
+}
+
+.cv-col h2 {
+    font-size: 1.25rem;
+    color: #111;
+    border-bottom: 1px solid #999;
+    padding-bottom: 6px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.item {
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+.title-highlight {
+    font-weight: bold;
+    margin: 0 0 4px 0;
+}
+
+.subtitle {
+    margin: 0 0 4px 0;
+    color: #444;
+}
+
+.details {
+    margin: 0;
+    font-style: italic;
+    color: #555;
+}
+
+/* Μεσαία στήλη: Φιγούρα & Grid (Διορθωμένο Path) */
+.center-col {
+    text-align: center;
+}
+
+.avatar-bg {
+    display: inline-block;
+    background-image: url('../images/grid.png'); /* Διορθωμένο relative path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px;
+    border-radius: 8px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.avatar-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Highlights */
+.highlight-yellow {
+    background-color: #fce881;
+    padding: 1px 5px;
+    font-weight: bold;
+    color: #111;
+}
+
+.highlight-green {
+    background-color: #b7e8ad;
+    padding: 1px 5px;
+    font-weight: bold;
+    color: #111;
+}
+
+.divider {
+    border: 0;
+    height: 1px;
+    background: #222;
+    margin: 25px 0;
+}
+
+/* Skills, Publications, Awards */
+.full-width-section {
+    font-size: 0.85rem;
+}
+
+.section-title {
+    font-size: 1.15rem;
+    color: #111;
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.9fr;
+    gap: 25px;
+}
+
+.skills-column h3 {
+    font-size: 0.95rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.skills-list, .skills-list-two-cols {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.skills-list li {
+    margin-bottom: 4px;
+}
+
+.skills-list.multi-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 15px;
+}
+
+.orcid-text {
+    font-style: italic;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.publications-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.publications-list li {
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.awards-list {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.awards-list li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Αόρατα σχήματα για το αγκάλιασμα του κειμένου γύρω από το avatar */
+.curve-left {
+    float: right;
+    width: 60px;
+    height: 280px;
+    shape-outside: polygon(100% 0, 0% 45%, 100% 100%); 
+}
+
+.curve-right {
+    float: left;
+    width: 60px;
+    height: 280px;
+    shape-outside: polygon(0 0, 100% 45%, 0 100%);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE ΓΙΑ ΚΙΝΗΤΑ (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    /* Ρυθμίσεις Αρχικής για Κινητά */
+    .magazine-header {
+        padding: 20px 20px 15px 20px;
+    }
+    .magazine-title {
+        font-size: 2.2rem;
+    }
+    .magazine-tagline {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+    }
+    .magazine-nav {
+        grid-template-columns: 1fr; /* 1 στήλη στα κινητά */
+        gap: 12px;
+    }
+    .header-meta {
+        flex-direction: column;
+        gap: 4px;
+    }
+    .meta-center {
+        display: none; /* Κρύβουμε το URL στα κινητά */
+    }
+    
+    /* Ρυθμίσεις Δισέλιδου Δημοσιεύσεων για Κινητά */
+    .magazine-spread {
+        grid-template-columns: 1fr; /* 1 στήλη στα κινητά */
+        padding: 15px;
+    }
+    .spread-article {
+        border-right: none;
+        padding-right: 0;
+    }
+    .publications-paper-list {
+        max-height: 400px;
+    }
+    .spread-interactive {
+        margin-top: 25px;
+    }
+
+    /* Ρυθμίσεις CV για Κινητά */
+    .cv-container {
+        padding: 25px 20px;
+    }
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+    .center-col {
+        order: -1;
+        margin-bottom: 20px;
+    }
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .skills-list.multi-col {
+        grid-template-columns: 1fr;
+    }
+    .curve-left, .curve-right {
+        display: none; /* Απενεργοποίηση σχημάτων στα κινητά */
+    }
+    /* Responsive για τα νέα στοιχεία του CV */
+    .tabs-navigation {
+        flex-direction: column;
+        gap: 6px;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        font-size: 0.68rem;
+    }
+    
+    .projects-grid, .teaching-grid, .skills-tab-grid, .honors-certs-grid {
+        grid-template-columns: 1fr; /* Μετατροπή σε 1 στήλη */
+        gap: 20px;
+    }
+    
+    .teaching-multi-col {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-certs-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 στήλες στα κινητά */
+    }
+    
+    .conf-item {
+        flex-direction: column;
+        gap: 4px;
+    }    
+}
+
+/* ==========================================================================
+   ΝΕΑ ΣΤΟΙΧΕΙΑ ΑΡΧΙΚΗΣ ΣΕΛΙΔΑΣ (POP & INTERACTIVE BUBBLE)
+   ========================================================================== */
+
+/* Κουμπί POP (Πάνω Δεξιά) */
+.pop-button-wrapper {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    z-index: 15;
+    cursor: pointer;
+    background-color: #111;
+    color: #fff;
+    
+    /* ΑΛΛΑΓΕΣ ΓΙΑ ΜΕΓΑΛΥΤΕΡΟ ΜΕΓΕΘΟΣ */
+    padding: 20px 18px;        /* Από 8px 14px, αυξάνουμε το "γέμισμα" του κουμπιού */
+    font-size: 1.5rem;        /* Από 0.75rem, μεγαλώνουμε ελαφρώς τη γραμματοσειρά */
+    /* ---------------------------- */
+    
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.pop-button-wrapper:hover {
+    transform: scale(1.08);
+    background-color: #333;
+}
+
+/* Αν χρησιμοποιήσεις εικόνα για το pop, φροντίζεις να έχει σωστό μέγεθος */
+.pop-btn-img {
+    max-width: 60px;
+    height: auto;
+    display: block;
+}
+
+/* Ενημέρωση της υπάρχουσας κλάσης */
+/* Βασική Κλάση για όλες τις διαδραστικές φυσαλίδες */
+.interactive-target-bubble {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    z-index: 15;
+    
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.6);
+    
+    transition: opacity 0.4s ease, 
+                transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                top 0.5s ease-in-out, 
+                left 0.5s ease-in-out;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; 
+}
+
+/* Κατάσταση Εμφάνισης */
+.interactive-target-bubble.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+/* 1. Στυλ για τη Φυσαλίδα Publications (Κίτρινη) */
+.publications-bubble {
+    background-color: rgba(252, 232, 129, 0.25);
+    border: 3px solid #fce881;
+    box-shadow: 0 0 15px #fce881;
+}
+
+.publications-bubble.visible {
+    animation: pulsePubBubble 2s infinite alternate;
+}
+
+.publications-bubble .bubble-text {
+    background-color: #111;
+    color: #fce881; /* Κίτρινα γράμματα */
+}
+
+@keyframes pulsePubBubble {
+    0% { box-shadow: 0 0 10px #fce881, inset 0 0 5px rgba(252, 232, 129, 0.2); }
+    100% { box-shadow: 0 0 25px #fce881, inset 0 0 12px rgba(252, 232, 129, 0.5); }
+}
+
+/* 2. Στυλ για τη Φυσαλίδα CV / Bio (Γαλάζια) */
+.cv-bubble {
+    background-color: rgba(135, 206, 250, 0.25); /* 25% γαλάζιο */
+    border: 3px solid #87cefa; /* Skyblue περίγραμμα */
+    box-shadow: 0 0 15px #87cefa;
+}
+
+.cv-bubble.visible {
+    animation: pulseCvBubble 2s infinite alternate;
+}
+
+.cv-bubble .bubble-text {
+    background-color: #111;
+    color: #87cefa; /* Γαλάζια γράμματα */
+}
+
+@keyframes pulseCvBubble {
+    0% { box-shadow: 0 0 10px #87cefa, inset 0 0 5px rgba(135, 206, 250, 0.2); }
+    100% { box-shadow: 0 0 25px #87cefa, inset 0 0 12px rgba(135, 206, 250, 0.5); }
+}
+
+/* ΝΕΑ ΚΛΑΣΗ: Το ταμπελάκι κειμένου κάτω από τη φυσαλίδα */
+.bubble-text {
+    position: absolute;
+    bottom: -32px; /* Τοποθέτηση ακριβώς κάτω από τον κύκλο */
+    left: 50%;
+    transform: translateX(-50%); /* Τέλειο κεντράρισμα στον οριζόντιο άξονα */
+    
+    /* Στυλ ετικέτας */
+    background-color: #111; /* Σκούρο φόντο για να κάνει αντίθεση */
+    color: #fce881; /* Κίτρινα γράμματα που ταιριάζουν με τη φυσαλίδα */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap; /* Αποτρέπει το κείμενο από το να σπάσει σε δεύτερη γραμμή */
+    
+    padding: 4px 8px;
+    border-radius: 3px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    pointer-events: none; /* Το κλικ περνάει στον κύκλο από πίσω */
+}
+
+/* Κατάσταση Εμφάνισης (ενεργοποιείται μέσω JS) */
+.interactive-target-bubble.visible {
+    opacity: 1;
+    pointer-events: auto; /* Επιτρέπει το κλικ */
+    transform: scale(1);
+    animation: pulseTargetBubble 2s infinite alternate;
+}
+
+/* Animation για να αναβοσβήνει απαλά ο κύκλος */
+@keyframes pulseTargetBubble {
+    0% {
+        box-shadow: 0 0 10px #fce881, inset 0 0 5px rgba(252, 232, 129, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 25px #fce881, inset 0 0 12px rgba(252, 232, 129, 0.5);
+    }
+}
+
+
+/* ==========================================================================
+   6. ΝΕΑ ΣΤΟΙΧΕΙΑ ΣΕΛΙΔΑΣ ΒΙΟΓΡΑΦΙΚΟΥ (CV TABS, FILTERS & MODAL)
+   ========================================================================== */
+
+/* 6.1 Διαδραστικά Tabs */
+.cv-tabs-section {
+    margin: 35px 0;
+}
+
+.tabs-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-bottom: 2px solid #222;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+    background-color: rgba(17, 17, 17, 0.05);
+    border-color: #111;
+}
+
+.tab-btn.active {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+/* Διαχείριση Προβολής Περιεχομένου Tabs */
+.tab-pane {
+    display: none; /* Κρυφό από προεπιλογή */
+    animation: fadeInTab 0.35s ease-in-out;
+}
+
+.tab-pane.active {
+    display: block; /* Εμφανίζεται μόνο το ενεργό */
+}
+
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 6.2 Διάταξη Περιεχομένου Μέσα στα Tabs */
+/* Projects Grid (Tab 1) */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.project-item {
+    position: relative;
+    padding: 15px 15px 15px 40px;
+    background-color: #f5f5f7;
+    border-left: 3px solid #111;
+    border-radius: 0 4px 4px 0;
+}
+
+.project-item.linkable {
+    text-decoration: none; /* Αφαιρεί την υπογράμμιση */
+    display: block; /* Κάνει όλο το πλαίσιο clickable */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-item.linkable:hover {
+    transform: translateY(-2px); /* Μικρό ανασήκωμα στο hover */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-left-color: #fce881; /* Το περίγραμμα γίνεται κίτρινο στο hover */
+}
+
+.project-num {
+    position: absolute;
+    left: 12px;
+    top: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: #888;
+}
+
+.project-item h3 {
+    font-size: 0.88rem;
+    margin: 0 0 6px 0;
+    color: #111;
+    line-height: 1.3;
+}
+
+.project-meta {
+    font-size: 0.75rem;
+    color: #555;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Teaching & Tutoring (Tab 2) */
+.teaching-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.teaching-col h3 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+
+.teaching-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.teaching-list li {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.teaching-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #111;
+    font-weight: bold;
+}
+
+.teaching-multi-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 15px;
+}
+
+/* Skills & Softwares (Tab 3) */
+.skills-tab-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.skills-group {
+    background-color: #f5f5f7;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.skills-group h4 {
+    font-size: 0.85rem;
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #111;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 4px;
+}
+
+.skills-group p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    margin: 0;
+    color: #333;
+}
+
+/* 6.3 Φίλτρα & Λίστα Συνεδρίων (Tab 4) */
+.conf-filters {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid #bbb;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.conf-list {
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Webkit Scrollbar για τη λίστα συνεδρίων */
+.conf-list::-webkit-scrollbar {
+    width: 5px;
+}
+.conf-list::-webkit-scrollbar-track {
+    background: #e4e4e7;
+    border-radius: 4px;
+}
+.conf-list::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 4px;
+}
+
+.conf-item {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #e4e4e7;
+    align-items: flex-start;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Όταν ένα φίλτρο κρύβει ένα συνέδριο */
+.conf-item.hidden {
+    display: none;
+}
+
+.conf-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #111;
+    min-width: 45px;
+}
+
+.conf-details {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    margin: 0;
+    color: #333;
+}
+
+/* 6.4 Ενότητα Honors, Reviews & Credentials */
+.cv-honors-certs-section {
+    margin-top: 35px;
+}
+
+.honors-certs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 35px;
+}
+
+.honors-col h3, .certs-col h3 {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 6px;
+    color: #111;
+}
+
+.reviewer-badge-container {
+    margin-bottom: 15px;
+}
+
+.reviewer-highlight {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin: 0 0 8px 0;
+    padding: 6px 10px;
+    background-color: #b7e8ad; /* Απαλό πράσινο */
+    border-radius: 4px;
+    color: #111;
+}
+
+/* Χρησιμοποιούμε κίτρινο για το Outstanding Reviewer */
+.reviewer-highlight:first-child {
+    background-color: #fce881;
+}
+
+.journals-reviewed-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.journals-reviewed-list li {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    padding: 4px 0;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+}
+
+/* 6.5 Featured Certificates Grid (Τα 5 Πιστοποιητικά) */
+.featured-certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Το 4ο και 5ο πιστοποιητικό θα κεντράρονται όμορφα στη δεύτερη σειρά */
+.cert-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    
+    /* ΝΕΕΣ ΡΥΘΜΙΣΕΙΣ ΓΙΑ ΟΜΟΙΟΜΟΡΦΙΑ */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Σπρώχνει το κείμενο στο κάτω μέρος */
+    height: 180px; /* Επιβάλλει κοινό ύψος σε όλες τις κάρτες */
+    box-sizing: border-box;
+}
+
+.cert-card:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.cert-thumb {
+    max-width: 100%;
+    max-height: 120px; /* Περιορίζει το ύψος ώστε να μην ξεχειλώνουν οι κατακόρυφες εικόνες */
+    width: auto;
+    height: auto;
+    margin: auto; /* Κεντράρει την εικόνα οριζόντια και κατακόρυφα στο ελεύθερο κενό */
+    display: block;
+    border-radius: 2px;
+    object-fit: contain; /* Αποτρέπει την παραμόρφωση της εικόνας */
+}
+
+.cert-caption {
+    display: block;
+    font-size: 0.58rem;
+    font-weight: 600;
+    margin-top: 6px;
+    color: #444;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.view-all-certs-btn {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid #111;
+    color: #111;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.view-all-certs-btn:hover {
+    background-color: #111;
+    color: #fff;
+}
+
+/* 6.6 Αναδυόμενο Παράθυρο (Certs Modal Lightbox) */
+.certs-modal {
+    display: none; /* Κρυφό από προεπιλογή */
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(17, 17, 17, 0.92); /* Πολύ σκούρο φόντο */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Ενεργό modal */
+.certs-modal.open {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: zoomInModal 0.3s ease;
+}
+
+.modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 85vh;
+    display: block;
+    border-radius: 4px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    z-index: 110;
+}
+
+.modal-close:hover {
+    color: #fce881;
+}
+
+@keyframes zoomInModal {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}
+
+/* ==========================================================================
+   4. ΣΕΛΙΔΑ ΒΙΟΓΡΑΦΙΚΟΥ (pages/cv.html)
+   ========================================================================== */
+.cv-page-content {
+    background-color: #ffffff; /* Αλλαγή σε καθαρό λευκό */
+    padding: 40px 45px 50px 45px;
+    border-top: 1px solid #ddd; /* Διακριτικός διαχωρισμός από το λευκό header */
+}
+
+/* Αφαιρούμε τις παλιές ρυθμίσεις του .cv-container */
+.cv-container {
+    display: none; 
+}
+
+/* ==========================================================================
+   7. ΟΜΑΛΟ ΕΦΕ ΕΜΦΑΝΙΣΗΣ ΣΕΛΙΔΑΣ (FADE-IN PAGE TRANSITION)
+   ========================================================================== */
+.magazine-container {
+    opacity: 0; /* Ξεκινάει εντελώς αόρατο */
+    animation: fadeInPage 0.45s ease-out forwards; /* Εμφανίζεται απαλά μέσα σε 0.45 δευτερόλεπτα */
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(8px); /* Ξεκινάει 8px πιο κάτω */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Καταλήγει στην κανονική του θέση */
+    }
+}
+/* 1. Ρύθμιση για τη νέα στήλη Contact (div αντί για α) */
+.contact-column {
+  cursor: default; /* Δεν θέλουμε pointer σε όλη τη στήλη, μόνο στα links */
   position: relative;
 }
 
-/* Το αρχικό κείμενο */
+/* 2. Στυλ για τον κύριο τίτλο CONTACT (email link) */
+.column-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.column-title-link:hover .column-title {
+  color: var(--accent-color); /* Παίρνει το χρώμα hover των άλλων στηλών */
+}
+
+/* 3. Container για τα social links (Αρχικά κρυμμένα) */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none; /* Απενεργοποίηση κλικ όσο είναι κρυφά */
+  transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 4. Εμφάνιση των links με Hover πάνω στη στήλη Contact */
+.contact-column:hover .contact-links {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* Ενεργοποίηση κλικ κατά το hover */
+}
+
+/* 5. Στυλ για τα επιμέρους social links */
+.sub-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(240, 240, 240, 0.5); /* Αχνό χρώμα */
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sub-link:hover {
+  color: var(--accent-color);
+  transform: translateX(4px); /* Μικρή κίνηση προς τα δεξιά */
+}
+
+/* 1. Ρύθμιση για τη στήλη Contact */
+/* 1. Ρύθμιση για τη στήλη Contact */
+.contact-column {
+  cursor: default;
+  position: relative; /* Σημείο αναφοράς για το absolute positioning */
+}
+
+/* 2. Το wrapper του περιεχομένου */
+.contact-content-wrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+/* 3. Το αρχικό κείμενο - Αυτό καθορίζει πλέον αποκλειστικά το ύψος της στήλης */
 .contact-default-text {
-  grid-area: stack;
   margin: 0;
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Η λίστα των links (Absolute ώστε να μην σπρώχνει την γκρι γραμμή) */
+/* 4. Η λίστα με τα links γίνεται absolute για να ΜΗΝ σπρώχνει την γκρι γραμμή */
 .contact-hover-links {
-  grid-area: stack;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -175,11 +1419,11 @@ a.nav-column:hover {
   opacity: 0;
   transform: translateY(10px);
   pointer-events: none;
-  z-index: 110;
+  z-index: 10; /* Εμφανίζεται πάνω από τη γραμμή και το hero visual */
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover εφέ εναλλαγής περιεχομένου */
+/* 5. Κατάσταση Hover */
 .contact-column:hover .contact-default-text {
   opacity: 0;
   transform: translateY(-10px);
@@ -192,1159 +1436,20 @@ a.nav-column:hover {
   pointer-events: auto;
 }
 
-/* Στυλ των links στη λίστα */
+/* 6. Στυλ των links */
 .sub-link {
   font-family: 'Inter', sans-serif;
   font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: #fce881; /* Χρυσό/Κίτρινο χρώμα */
+  color: var(--accent-color);
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
   line-height: 1.2;
 }
 
 .sub-link:hover {
-  color: #111; /* Γίνεται σκούρο στο hover */
+  color: var(--text-color);
   transform: translateX(4px);
-}
-
-/* Hero Image */
-.magazine-hero {
-  position: relative;
-  width: 100%;
-  line-height: 0; /* Αφαιρεί κενά κάτω από την εικόνα */
-}
-
-.hero-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Αόρατο clickable κουμπί πάνω από το Barcode */
-.barcode-hitbox {
-  position: absolute;
-  bottom: 2%;
-  left: 2%;
-  width: 11%;
-  height: 17%;
-  z-index: 10;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.barcode-hitbox:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-
-/* ==========================================================================
- 3. ΣΕΛΙΔΑ ΔΗΜΟΣΙΕΥΣΕΩΝ - SPREAD LAYOUT (pages/publications.html)
- ========================================================================== */
-
-.magazine-spread {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr; /* 2 στήλες: Άρθρο & Παιχνίδι */
-  gap: 30px;
-  padding: 20px 40px 40px 40px;
-  background-color: #fff;
-  border-top: 1px solid #ddd;
-}
-
-/* Αριστερή Στήλη: Το Άρθρο */
-.spread-article {
-  text-align: left;
-  border-right: 1px solid #eee;
-  padding-right: 25px;
-}
-
-.article-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.85rem;
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #111;
-}
-
-.article-intro {
-  font-size: 0.85rem;
-  line-height: 1.5;
-  color: #555;
-  margin-bottom: 30px;
-  font-style: italic;
-}
-
-/* Λίστα Δημοσιεύσεων */
-.publications-paper-list {
-  max-height: 550px; /* Scrollable λίστα */
-  overflow-y: auto;
-  padding-right: 15px;
-}
-
-/* Webkit Scrollbar για την αισθητική του περιοδικού */
-.publications-paper-list::-webkit-scrollbar {
-  width: 6px;
-}
-.publications-paper-list::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 4px;
-}
-.publications-paper-list::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-.publications-paper-list::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
-}
-
-.year-group {
-  margin-bottom: 25px;
-}
-
-.year-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #111;
-  border-bottom: 1px solid #111;
-  padding-bottom: 4px;
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-
-.paper-item {
-  position: relative;
-  padding: 10px 10px 10px 30px;
-  margin-bottom: 15px;
-  background-color: #fafafa;
-  border-left: 2px solid #ddd;
-  border-radius: 0 4px 4px 0;
-  transition: all 0.3s ease;
-}
-
-.paper-num {
-  position: absolute;
-  left: 6px;
-  top: 10px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: #888;
-}
-
-.paper-text {
-  font-size: 0.78rem;
-  line-height: 1.45;
-  margin: 0 0 6px 0;
-  color: #333;
-}
-
-.paper-text strong {
-  color: #111;
-}
-
-.paper-doi {
-  display: inline-block;
-  font-size: 0.72rem;
-  color: #111;
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.2s ease;
-}
-
-.paper-doi:hover {
-  color: #555;
-  text-decoration: underline;
-}
-
-/* Εφέ Highlight όταν μια φυσαλίδα δείχνει ένα paper */
-.paper-item.highlighted-by-game {
-  background-color: #fce881; /* Κίτρινο highlight */
-  border-left-color: #111;
-  transform: translateX(4px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* Δεξιά Στήλη: Το Παιχνίδι */
-.spread-interactive {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.game-wrapper {
-  position: sticky;
-  top: 20px; /* Μένει σταθερό κατά το σκρολάρισμα */
-}
-
-.game-canvas {
-  position: relative;
-  width: 100%;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  line-height: 0;
-}
-
-.game-bg-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.game-instructions {
-  font-size: 0.7rem;
-  line-height: 1.4;
-  color: #666;
-  margin-top: 15px;
-  background-color: #f9f9f9;
-  padding: 10px 12px;
-  border-radius: 4px;
-  border-left: 2px solid #aaa;
-}
-
-/* Στοιχεία Φυσαλίδας (Glowing Bubble) */
-.glowing-bubble {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 20;
-  transform: scale(1);
-  opacity: 0.9;
-  transition: transform 0.2s ease, opacity 0.3s ease;
-  animation: floatBubble 4s ease-in-out infinite alternate;
-}
-
-.glowing-bubble:hover {
-  transform: scale(1.3);
-  opacity: 1;
-  z-index: 30;
-}
-
-/* Tooltip Φυσαλίδας */
-.bubble-tooltip {
-  display: none;
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 180px;
-  background-color: rgba(17, 17, 17, 0.95);
-  color: #fff;
-  padding: 8px 10px;
-  border-radius: 4px;
-  font-size: 0.65rem;
-  line-height: 1.3;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  pointer-events: none;
-}
-
-.bubble-tooltip::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 5px;
-  border-style: solid;
-  border-color: rgba(17, 17, 17, 0.95) transparent transparent transparent;
-}
-
-.glowing-bubble:hover .bubble-tooltip {
-  display: block;
-}
-
-.click-prompt {
-  display: inline-block;
-  margin-top: 4px;
-  color: #fce881;
-  font-weight: 600;
-  font-size: 0.6rem;
-  text-transform: uppercase;
-}
-
-/* Κίνηση αιώρησης φυσαλίδων */
-@keyframes floatBubble {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-8px); }
-}
-
-/* ==========================================================================
- 4. ΣΕΛΙΔΑ ΒΙΟΓΡΑΦΙΚΟΥ (pages/cv.html)
- ========================================================================== */
-
-.cv-container {
-  max-width: 850px;
-  margin: 0 auto;
-  background-color: #ededf0; /* Το ελαφρώς γκρι/χαρτί φόντο του CV */
-  padding: 40px 45px 50px 45px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-}
-
-/* Κουμπί Επιστροφής στην Αρχική - Minimal Outline */
-.back-home-btn {
-  display: inline-block;
-  text-decoration: none;
-  color: #222;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  border: 1px solid #888;
-  border-radius: 4px;
-  padding: 6px 14px;
-  background-color: transparent;
-  margin-bottom: 25px;
-  transition: all 0.2s ease;
-}
-
-.back-home-btn:hover {
-  color: #fff;
-  background-color: #111;
-  border-color: #111;
-}
-
-.cv-header {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-/* Διάταξη 3 Στηλών (Πάνω Μέρος) */
-.cv-grid {
-  display: grid;
-  grid-template-columns: 1fr 260px 1fr;
-  gap: 25px;
-  align-items: center;
-}
-
-.cv-col h2 {
-  font-size: 1.25rem;
-  color: #111;
-  border-bottom: 1px solid #999;
-  padding-bottom: 6px;
-  margin-top: 0;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.item {
-  margin-bottom: 20px;
-  font-size: 0.85rem;
-  line-height: 1.4;
-}
-
-.title-highlight {
-  font-weight: bold;
-  margin: 0 0 4px 0;
-}
-
-.subtitle {
-  margin: 0 0 4px 0;
-  color: #444;
-}
-
-.details {
-  margin: 0;
-  font-style: italic;
-  color: #555;
-}
-
-/* Μεσαία στήλη: Φιγούρα & Grid (Διορθωμένο Path) */
-.center-col {
-  text-align: center;
-}
-
-.avatar-bg {
-  display: inline-block;
-  background-image: url('../images/grid.png'); /* Διορθωμένο relative path */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 10px;
-  border-radius: 8px;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-.avatar-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Highlights */
-.highlight-yellow {
-  background-color: #fce881;
-  padding: 1px 5px;
-  font-weight: bold;
-  color: #111;
-}
-
-.highlight-green {
-  background-color: #b7e8ad;
-  padding: 1px 5px;
-  font-weight: bold;
-  color: #111;
-}
-
-.divider {
-  border: 0;
-  height: 1px;
-  background: #222;
-  margin: 25px 0;
-}
-
-/* Skills, Publications, Awards */
-.full-width-section {
-  font-size: 0.85rem;
-}
-
-.section-title {
-  font-size: 1.15rem;
-  color: #111;
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-weight: bold;
-}
-
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 1.9fr;
-  gap: 25px;
-}
-
-.skills-column h3 {
-  font-size: 0.95rem;
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.skills-list, .skills-list-two-cols {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.skills-list li {
-  margin-bottom: 4px;
-}
-
-.skills-list.multi-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px 15px;
-}
-
-.orcid-text {
-  font-style: italic;
-  color: #555;
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-
-.publications-list {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.publications-list li {
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-
-.awards-list {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.awards-list li {
-  margin-bottom: 8px;
-  line-height: 1.4;
-}
-
-/* Αόρατα σχήματα για το αγκάλιασμα του κειμένου γύρω από το avatar */
-.curve-left {
-  float: right;
-  width: 60px;
-  height: 280px;
-  shape-outside: polygon(100% 0, 0% 45%, 100% 100%); 
-}
-
-.curve-right {
-  float: left;
-  width: 60px;
-  height: 280px;
-  shape-outside: polygon(0 0, 100% 45%, 0 100%);
-}
-
-/* ==========================================================================
- 5. ΝΕΑ ΣΤΟΙΧΕΙΑ ΣΕΛΙΔΑΣ ΒΙΟΓΡΑΦΙΚΟΥ (CV TABS, FILTERS & MODAL)
- ========================================================================== */
-
-/* 5.1 Διαδραστικά Tabs */
-.cv-tabs-section {
-  margin: 35px 0;
-}
-
-.tabs-navigation {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  border-bottom: 2px solid #222;
-  padding-bottom: 10px;
-  margin-bottom: 25px;
-}
-
-.tab-btn {
-  flex: 1;
-  background: transparent;
-  border: 1px solid #999;
-  border-radius: 4px;
-  padding: 10px 15px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: #333;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.tab-btn:hover {
-  background-color: rgba(17, 17, 17, 0.05);
-  border-color: #111;
-}
-
-.tab-btn.active {
-  background-color: #111;
-  color: #fff;
-  border-color: #111;
-}
-
-/* Διαχείριση Προβολής Περιεχομένου Tabs */
-.tab-pane {
-  display: none; /* Κρυφό από προεπιλογή */
-  animation: fadeInTab 0.35s ease-in-out;
-}
-
-.tab-pane.active {
-  display: block; /* Εμφανίζεται μόνο το ενεργό */
-}
-
-@keyframes fadeInTab {
-  from { opacity: 0; transform: translateY(5px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* 5.2 Διάταξη Περιεχομένου Μέσα στα Tabs */
-/* Projects Grid (Tab 1) */
-.projects-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.project-item {
-  position: relative;
-  padding: 15px 15px 15px 40px;
-  background-color: #f5f5f7;
-  border-left: 3px solid #111;
-  border-radius: 0 4px 4px 0;
-}
-
-.project-item.linkable {
-  text-decoration: none; /* Αφαιρεί την υπογράμμιση */
-  display: block; /* Κάνει όλο το πλαίσιο clickable */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-item.linkable:hover {
-  transform: translateY(-2px); /* Μικρό ανασήκωμα στο hover */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  border-left-color: #fce881; /* Το περίγραμμα γίνεται κίτρινο στο hover */
-}
-
-.project-num {
-  position: absolute;
-  left: 12px;
-  top: 15px;
-  font-family: 'Playfair Display', serif;
-  font-size: 1rem;
-  font-style: italic;
-  color: #888;
-}
-
-.project-item h3 {
-  font-size: 0.88rem;
-  margin: 0 0 6px 0;
-  color: #111;
-  line-height: 1.3;
-}
-
-.project-meta {
-  font-size: 0.75rem;
-  color: #555;
-  margin: 0;
-  line-height: 1.4;
-}
-
-/* Teaching & Tutoring (Tab 2) */
-.teaching-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-}
-
-.teaching-col h3 {
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 6px;
-}
-
-.teaching-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.teaching-list li {
-  font-size: 0.8rem;
-  line-height: 1.6;
-  margin-bottom: 8px;
-  position: relative;
-  padding-left: 15px;
-}
-
-.teaching-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: #111;
-  font-weight: bold;
-}
-
-.teaching-multi-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px 15px;
-}
-
-/* Skills & Softwares (Tab 3) */
-.skills-tab-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.skills-group {
-  background-color: #f5f5f7;
-  padding: 15px;
-  border-radius: 4px;
-}
-
-.skills-group h4 {
-  font-size: 0.85rem;
-  margin-top: 0;
-  margin-bottom: 8px;
-  color: #111;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 4px;
-}
-
-.skills-group p {
-  font-size: 0.78rem;
-  line-height: 1.5;
-  margin: 0;
-  color: #333;
-}
-
-/* 5.3 Φίλτρα & Λίστα Συνεδρίων (Tab 4) */
-.conf-filters {
-  display: flex;
-  justify-content: flex-start;
-  gap: 8px;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-}
-
-.filter-btn {
-  background: transparent;
-  border: 1px solid #bbb;
-  border-radius: 20px;
-  padding: 5px 15px;
-  font-size: 0.68rem;
-  font-weight: 500;
-  color: #555;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.filter-btn:hover, .filter-btn.active {
-  background-color: #111;
-  color: #fff;
-  border-color: #111;
-}
-
-.conf-list {
-  max-height: 450px;
-  overflow-y: auto;
-  padding-right: 15px;
-}
-
-/* Webkit Scrollbar για τη λίστα συνεδρίων */
-.conf-list::-webkit-scrollbar {
-  width: 5px;
-}
-.conf-list::-webkit-scrollbar-track {
-  background: #e4e4e7;
-  border-radius: 4px;
-}
-.conf-list::-webkit-scrollbar-thumb {
-  background: #bbb;
-  border-radius: 4px;
-}
-
-.conf-item {
-  display: flex;
-  gap: 15px;
-  padding: 10px;
-  border-bottom: 1px solid #e4e4e7;
-  align-items: flex-start;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Όταν ένα φίλτρο κρύβει ένα συνέδριο */
-.conf-item.hidden {
-  display: none;
-}
-
-.conf-year {
-  font-family: 'Playfair Display', serif;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #111;
-  min-width: 45px;
-}
-
-.conf-details {
-  font-size: 0.78rem;
-  line-height: 1.45;
-  margin: 0;
-  color: #333;
-}
-
-/* 5.4 Ενότητα Honors, Reviews & Credentials */
-.cv-honors-certs-section {
-  margin-top: 35px;
-}
-
-.honors-certs-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 35px;
-}
-
-.honors-col h3, .certs-col h3 {
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #999;
-  padding-bottom: 6px;
-  color: #111;
-}
-
-.reviewer-badge-container {
-  margin-bottom: 15px;
-}
-
-.reviewer-highlight {
-  font-size: 0.8rem;
-  line-height: 1.4;
-  margin: 0 0 8px 0;
-  padding: 6px 10px;
-  background-color: #b7e8ad; /* Απαλό πράσινο */
-  border-radius: 4px;
-  color: #111;
-}
-
-/* Χρησιμοποιούμε κίτρινο για το Outstanding Reviewer */
-.reviewer-highlight:first-child {
-  background-color: #fce881;
-}
-
-.journals-reviewed-list {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.journals-reviewed-list li {
-  font-size: 0.78rem;
-  line-height: 1.6;
-  padding: 4px 0;
-  border-bottom: 1px solid #ddd;
-  color: #333;
-}
-
-/* 5.5 Featured Certificates Grid (Τα 5 Πιστοποιητικά) */
-.featured-certs-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.cert-card {
-  background: #fff;
-  padding: 10px;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  text-align: center;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  cursor: pointer;
-  
-  /* Ρυθμίσεις για ομοιομορφία */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Σπρώχνει το κείμενο στο κάτω μέρος */
-  height: 180px; /* Επιβάλλει κοινό ύψος σε όλες τις κάρτες */
-  box-sizing: border-box;
-}
-
-.cert-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-}
-
-.cert-thumb {
-  max-width: 100%;
-  max-height: 120px; /* Περιορίζει το ύψος ώστε να μην ξεχειλώνουν οι κατακόρυφες εικόνες */
-  width: auto;
-  height: auto;
-  margin: auto; /* Κεντράρει την εικόνα οριζόντια και κατακόρυφα */
-  display: block;
-  border-radius: 2px;
-  object-fit: contain; /* Αποτρέπει την παραμόρφωση της εικόνας */
-}
-
-.cert-caption {
-  display: block;
-  font-size: 0.58rem;
-  font-weight: 600;
-  margin-top: 6px;
-  color: #444;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.view-all-certs-btn {
-  width: 100%;
-  background-color: transparent;
-  border: 1px solid #111;
-  color: #111;
-  border-radius: 4px;
-  padding: 10px;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.view-all-certs-btn:hover {
-  background-color: #111;
-  color: #fff;
-}
-
-/* 5.6 Αναδυόμενο Παράθυρο (Certs Modal Lightbox) */
-.certs-modal {
-  display: none; /* Κρυφό από προεπιλογή */
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(17, 17, 17, 0.92); /* Πολύ σκούρο φόντο */
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Ενεργό modal */
-.certs-modal.open {
-  display: flex;
-  opacity: 1;
-}
-
-.modal-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
-  animation: zoomInModal 0.3s ease;
-}
-
-.modal-img {
-  width: 100%;
-  height: auto;
-  max-height: 85vh;
-  display: block;
-  border-radius: 4px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  z-index: 1110;
-}
-
-.modal-close:hover {
-  color: #fce881;
-}
-
-@keyframes zoomInModal {
-  from { transform: scale(0.9); }
-  to { transform: scale(1); }
-}
-
-/* ==========================================================================
- 6. INTERACTIVE BUBBLES & POP SYSTEM
- ========================================================================== */
-
-/* Κουμπί POP (Πάνω Δεξιά) */
-.pop-button-wrapper {
-  position: absolute;
-  top: 4%;
-  right: 4%;
-  z-index: 15;
-  cursor: pointer;
-  background-color: #111;
-  color: #fff;
-  padding: 20px 18px; /* Αυξημένο γέμισμα */
-  font-size: 1.5rem; /* Μεγαλύτερη γραμματοσειρά */
-  font-family: 'Playfair Display', serif;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.pop-button-wrapper:hover {
-  transform: scale(1.08);
-  background-color: #333;
-}
-
-.pop-btn-img {
-  max-width: 60px;
-  height: auto;
-  display: block;
-}
-
-/* Βασική Κλάση για όλες τις διαδραστικές φυσαλίδες */
-.interactive-target-bubble {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  z-index: 15;
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.6);
-  transition: opacity 0.4s ease, 
-              transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
-              top 0.5s ease-in-out, 
-              left 0.5s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none; 
-}
-
-/* Κατάσταση Εμφάνισης */
-.interactive-target-bubble.visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
-}
-
-/* Φυσαλίδα Publications (Κίτρινη) */
-.publications-bubble {
-  background-color: rgba(252, 232, 129, 0.25);
-  border: 3px solid #fce881;
-  box-shadow: 0 0 15px #fce881;
-}
-
-.publications-bubble.visible {
-  animation: pulsePubBubble 2s infinite alternate;
-}
-
-.publications-bubble .bubble-text {
-  background-color: #111;
-  color: #fce881; /* Κίτρινα γράμματα */
-}
-
-@keyframes pulsePubBubble {
-  0% { box-shadow: 0 0 10px #fce881, inset 0 0 5px rgba(252, 232, 129, 0.2); }
-  100% { box-shadow: 0 0 25px #fce881, inset 0 0 12px rgba(252, 232, 129, 0.5); }
-}
-
-/* Φυσαλίδα CV / Bio (Γαλάζια) */
-.cv-bubble {
-  background-color: rgba(135, 206, 250, 0.25); /* 25% γαλάζιο */
-  border: 3px solid #87cefa; /* Skyblue περίγραμμα */
-  box-shadow: 0 0 15px #87cefa;
-}
-
-.cv-bubble.visible {
-  animation: pulseCvBubble 2s infinite alternate;
-}
-
-.cv-bubble .bubble-text {
-  background-color: #111;
-  color: #87cefa; /* Γαλάζια γράμματα */
-}
-
-@keyframes pulseCvBubble {
-  0% { box-shadow: 0 0 10px #87cefa, inset 0 0 5px rgba(135, 206, 250, 0.2); }
-  100% { box-shadow: 0 0 25px #87cefa, inset 0 0 12px rgba(135, 206, 250, 0.5); }
-}
-
-/* Ενιαίο στυλ για το ταμπελάκι κειμένου κάτω από τις φυσαλίδες */
-.bubble-text {
-  position: absolute;
-  bottom: -32px; /* Τοποθέτηση ακριβώς κάτω από τον κύκλο */
-  left: 50%;
-  transform: translateX(-50%); /* Τέλειο κεντράρισμα */
-  background-color: #111;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  white-space: nowrap;
-  padding: 4px 8px;
-  border-radius: 3px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  pointer-events: none; /* Το κλικ περνάει στον κύκλο από πίσω */
-}
-
-/* ==========================================================================
- 7. RESPONSIVE ΓΙΑ ΚΙΝΗΤΑ (MEDIA QUERIES)
- ========================================================================== */
-
-@media (max-width: 768px) {
-  body {
-    padding: 10px;
-  }
-  
-  /* Ρυθμίσεις Αρχικής για Κινητά */
-  .magazine-header {
-    padding: 20px 20px 15px 20px;
-  }
-  .magazine-title {
-    font-size: 2.2rem;
-  }
-  .magazine-tagline {
-    font-size: 0.6rem;
-    letter-spacing: 2px;
-  }
-  .magazine-nav {
-    grid-template-columns: 1fr; /* 1 στήλη στα κινητά */
-    gap: 12px;
-  }
-  .header-meta {
-    flex-direction: column;
-    gap: 4px;
-  }
-  .meta-center {
-    display: none; /* Κρύβουμε το URL στα κινητά */
-  }
-  
-  /* Ρυθμίσεις Δισέλιδου Δημοσιεύσεων για Κινητά */
-  .magazine-spread {
-    grid-template-columns: 1fr; /* 1 στήλη στα κινητά */
-    padding: 15px;
-  }
-  .spread-article {
-    border-right: none;
-    padding-right: 0;
-  }
-  .publications-paper-list {
-    max-height: 400px;
-  }
-  .spread-interactive {
-    margin-top: 25px;
-  }
-
-  /* Ρυθμίσεις CV για Κινητά */
-  .cv-container {
-    padding: 25px 20px;
-  }
-  .cv-grid {
-    grid-template-columns: 1fr;
-  }
-  .center-col {
-    order: -1;
-    margin-bottom: 20px;
-  }
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-  .skills-list.multi-col {
-    grid-template-columns: 1fr;
-  }
-  .curve-left, .curve-right {
-    display: none; /* Απενεργοποίηση σχημάτων στα κινητά */
-  }
-  
-  /* Responsive για τα νέα στοιχεία του CV */
-  .tabs-navigation {
-    flex-direction: column;
-    gap: 6px;
-  }
-  
-  .tab-btn {
-    width: 100%;
-    font-size: 0.68rem;
-  }
-  
-  .projects-grid, .teaching-grid, .skills-tab-grid, .honors-certs-grid {
-    grid-template-columns: 1fr; /* Μετατροπή σε 1 στήλη */
-    gap: 20px;
-  }
-  
-  .teaching-multi-col {
-    grid-template-columns: 1fr;
-  }
-  
-  .featured-certs-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 στήλες στα κινητά */
-  }
-  
-  .conf-item {
-    flex-direction: column;
-    gap: 4px;
-  } 
 }
