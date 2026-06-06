@@ -1384,3 +1384,67 @@ body {
   color: var(--accent-color);
   transform: translateX(4px); /* Μικρή κίνηση προς τα δεξιά */
 }
+
+/* 1. Ρύθμιση για τη στήλη Contact */
+.contact-column {
+  cursor: default;
+}
+
+/* 2. Στοίβαξη (Overlap) του κειμένου και των links στο ίδιο ακριβώς σημείο */
+.contact-content-wrapper {
+  display: grid;
+  grid-template-areas: "stack";
+  margin-top: 10px;
+}
+
+/* 3. Το αρχικό κείμενο */
+.contact-default-text {
+  grid-area: stack;
+  margin: 0;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 4. Η λίστα με τα 5 links (αρχικά κρυμμένη) */
+.contact-hover-links {
+  grid-area: stack;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Μικρή απόσταση ανάμεσα στα links */
+  opacity: 0;
+  transform: translateY(10px); /* Ξεκινάει ελαφρώς πιο κάτω */
+  pointer-events: none; /* Απενεργοποίηση κλικ όσο είναι κρυφή */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* 5. Κατάσταση Hover: Εναλλαγή περιεχομένου */
+.contact-column:hover .contact-default-text {
+  opacity: 0;
+  transform: translateY(-10px); /* Φεύγει ελαφρώς προς τα πάνω */
+  pointer-events: none;
+}
+
+.contact-column:hover .contact-hover-links {
+  opacity: 1;
+  transform: translateY(0); /* Έρχεται στην κανονική του θέση */
+  pointer-events: auto; /* Ενεργοποιούνται τα κλικ */
+}
+
+/* 6. Στυλ των links στη λίστα */
+.sub-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem; /* Διακριτικό μέγεθος */
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--accent-color); /* Το χρυσό/κίτρινο χρώμα του site σου */
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  line-height: 1.2;
+}
+
+.sub-link:hover {
+  color: var(--text-color); /* Γίνεται λευκό/ανοιχτό όταν κάνεις hover πάνω του */
+  transform: translateX(4px); /* Μικρή κίνηση προς τα δεξιά */
+}
