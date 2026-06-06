@@ -1386,65 +1386,70 @@ body {
 }
 
 /* 1. Ρύθμιση για τη στήλη Contact */
+/* 1. Ρύθμιση για τη στήλη Contact */
 .contact-column {
   cursor: default;
+  position: relative; /* Σημείο αναφοράς για το absolute positioning */
 }
 
-/* 2. Στοίβαξη (Overlap) του κειμένου και των links στο ίδιο ακριβώς σημείο */
+/* 2. Το wrapper του περιεχομένου */
 .contact-content-wrapper {
-  display: grid;
-  grid-template-areas: "stack";
+  position: relative;
   margin-top: 10px;
 }
 
-/* 3. Το αρχικό κείμενο */
+/* 3. Το αρχικό κείμενο - Αυτό καθορίζει πλέον αποκλειστικά το ύψος της στήλης */
 .contact-default-text {
-  grid-area: stack;
   margin: 0;
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* 4. Η λίστα με τα 5 links (αρχικά κρυμμένη) */
+/* 4. Η λίστα με τα links γίνεται absolute για να ΜΗΝ σπρώχνει την γκρι γραμμή */
 .contact-hover-links {
-  grid-area: stack;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
-  gap: 5px; /* Μικρή απόσταση ανάμεσα στα links */
+  gap: 5px;
+  width: 100%;
+  
   opacity: 0;
-  transform: translateY(10px); /* Ξεκινάει ελαφρώς πιο κάτω */
-  pointer-events: none; /* Απενεργοποίηση κλικ όσο είναι κρυφή */
+  transform: translateY(10px);
+  pointer-events: none;
+  z-index: 10; /* Εμφανίζεται πάνω από τη γραμμή και το hero visual */
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* 5. Κατάσταση Hover: Εναλλαγή περιεχομένου */
+/* 5. Κατάσταση Hover */
 .contact-column:hover .contact-default-text {
   opacity: 0;
-  transform: translateY(-10px); /* Φεύγει ελαφρώς προς τα πάνω */
+  transform: translateY(-10px);
   pointer-events: none;
 }
 
 .contact-column:hover .contact-hover-links {
   opacity: 1;
-  transform: translateY(0); /* Έρχεται στην κανονική του θέση */
-  pointer-events: auto; /* Ενεργοποιούνται τα κλικ */
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-/* 6. Στυλ των links στη λίστα */
+/* 6. Στυλ των links */
 .sub-link {
   font-family: 'Inter', sans-serif;
-  font-size: 0.72rem; /* Διακριτικό μέγεθος */
+  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.8px;
-  color: var(--accent-color); /* Το χρυσό/κίτρινο χρώμα του site σου */
+  color: var(--accent-color);
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
   line-height: 1.2;
 }
 
 .sub-link:hover {
-  color: var(--text-color); /* Γίνεται λευκό/ανοιχτό όταν κάνεις hover πάνω του */
-  transform: translateX(4px); /* Μικρή κίνηση προς τα δεξιά */
+  color: var(--text-color);
+  transform: translateX(4px);
 }
