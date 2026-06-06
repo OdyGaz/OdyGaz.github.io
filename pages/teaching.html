@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teaching &amp; AniPhys - Odhisea Gazeli</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Σύνδεση με το ενιαίο CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <div class="magazine-layout">
+    <div class="magazine-container">
+      
+      <!-- ΚΟΙΝΗ ΚΕΦΑΛΙΔΑ ΠΕΡΙΟΔΙΚΟΥ (Masthead & Μενού Πλοήγησης) -->
+      <header class="magazine-header">
+        <div class="header-meta">
+          <span class="meta-left">PORTFOLIO VOL. 1</span>
+          <span class="meta-center">https://odygaz.github.io/</span>
+          <span class="meta-right">Bologna • Nicosia • Jaén • Patras</span>
+        </div>
+        <hr class="header-line">
+        <h1 class="magazine-title">Odhisea Gazeli</h1>
+        <p class="magazine-tagline">PLASMA PHYSICS • PHOTONICS • ANALYTICAL CHEMISTRY</p>
+        <hr class="header-line">
+        
+        <!-- Μενού Πλοήγησης (Μενού 4 στηλών - Συμβατό με Teaching ως τρέχουσα σελίδα) -->
+        <nav class="magazine-nav">
+          <a href="../index.html" class="nav-column">
+            <span class="column-num">Home</span>
+            <h2 class="column-title">BACK TO COVER</h2>
+            <p class="column-desc">Return to the interactive magazine cover.</p>
+          </a>
+          <a href="cv.html" class="nav-column">
+            <span class="column-num">I</span>
+            <h2 class="column-title">CURRICULUM VITAE</h2>
+            <p class="column-desc">Academic background, plasma physics diagnostics &amp; publications.</p>
+          </a>
+          <a href="publications.html" class="nav-column">
+            <span class="column-num">II</span>
+            <h2 class="column-title">PUBLICATIONS</h2>
+            <p class="column-desc">Peer-reviewed journal articles, conference papers &amp; research work.</p>
+          </a>
+          <a href="portfolio.html" class="nav-column">
+            <span class="column-num">III</span>
+            <h2 class="column-title">PORTFOLIO &amp; ART</h2>
+            <p class="column-desc">Hand-drawn sketches, mechanical automata &amp; scientific posters.</p>
+          </a>
+        </nav>
+      </header>
+
+      <!-- ΠΕΡΙΕΧΟΜΕΝΟ ΣΕΛΙΔΑΣ (Split Editorial Layout) -->
+      <main class="teaching-page-content">
+        <div class="editorial-split-grid">
+          
+          <!-- ΑΡΙΣΤΕΡΗ ΣΤΗΛΗ: TUTORIALS & NOTES -->
+          <section class="editorial-column tutorials-col">
+            <h2 class="section-editorial-title">JOURNAL &amp; TUTORIALS</h2>
+            <p class="section-editorial-subtitle">A personal notebook dedicated to sharing guides, coding tips, technical hobbies, and whatever captures my curiosity.</p>
+            
+			<!-- Άρθρο/Tutorial 1: My Personal Kanban 2.0 -->
+            <article class="editorial-article">
+              <h3 class="article-title">My Personal Kanban 2.0: Local Project Management</h3>
+              <p class="article-meta">Category: Software Development / Productivity</p>
+              
+              <!-- Responsive YouTube Video -->
+              <div class="video-container">
+                <!-- Εδώ έχω βάλει ήδη το σωστό, διορθωμένο URL για το βίντεό σου! -->
+                <iframe src="https://www.youtube.com/embed/QACmKC3ESC4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              
+              <p class="article-text">
+                Most modern project management and Kanban board services run on the cloud, often imposing restrictive limitations on file upload sizes, storage quotas, and feature access. To address these limitations, I designed and built <strong>My Personal Kanban 2.0</strong>—a native, lightweight desktop application that runs entirely locally on your computer. 
+              </p>
+              
+              <p class="article-text">
+                The application leverages a classic three-column Kanban system (<em>To Do</em>, <em>In Progress</em>, and <em>Done</em>) with smooth drag-and-drop state transitions. Key highlights of the project include:
+              </p>
+              
+              <ul class="article-bullet-list">
+                <li><strong>Local File-Oriented Storage:</strong> Attaching files (such as PDF reports, code scripts, or images) to a task automatically generates a dedicated folder structure within your system's <code>Documents</code> directory, keeping your project assets clean and organized.</li>
+                <li><strong>Task &amp; Subtask Hierarchy:</strong> Users can break down larger goals into granular subtasks, complete with independent checkboxes, deletion safety mechanisms, and custom file attachments.</li>
+                <li><strong>Hourly Planner &amp; Quick Notes:</strong> Features a built-in interactive daily timeline (running from 6:00 AM to midnight) alongside a rich-text formatting panel for checklists, reminders, and persistent markdown-like notes.</li>
+              </ul>
+              
+              <div class="article-actions">
+                <a href="https://github.com/OdyGaz" target="_blank" class="article-btn">View on GitHub ↗</a>
+              </div>
+            </article>
+
+            <!-- Άρθρο 2: The Book Corner -->
+            <article class="editorial-article">
+              <h3 class="article-title">The Book Corner: Essential Readings</h3>
+              <p class="article-meta">Category: Literature / Reference Library</p>
+              <p class="article-text">
+                A curated selection of books, textbooks, and reference manuals that have significantly shaped my scientific understanding and technical skills over the years.
+              </p>
+              
+              <!-- Λίστα Βιβλίων (Book Corner Grid) -->
+              <div class="book-corner-grid">
+                
+                <!-- Βιβλίο 1 -->
+                <div class="book-item">
+                  <div class="book-info">
+                    <span class="book-title">Principles of Plasma Discharges and Materials Processing</span>
+                    <span class="book-author">by M. A. Lieberman &amp; A. J. Lichtenberg</span>
+                  </div>
+                  <p class="book-review">
+                    The absolute bible of low-temperature plasma physics. Its rigorous mathematical derivations and deep physical insights are indispensable for anyone working on gas discharges and materials processing.
+                  </p>
+                </div>
+
+                <!-- Βιβλίο 2 -->
+                <div class="book-item">
+                  <div class="book-info">
+                    <span class="book-title">Plasma Chemistry</span>
+                    <span class="book-author">by Alexander Fridman</span>
+                  </div>
+                  <p class="book-review">
+                    A comprehensive guide that bridges thermodynamics, chemical kinetics, and gas discharges, offering invaluable assistance for modern plasma chemistry modeling.
+                  </p>
+                </div>
+
+                <!-- Βιβλίο 3 -->
+                <div class="book-item">
+                  <div class="book-info">
+                    <span class="book-title">Introduction to Electrodynamics</span>
+                    <span class="book-author">by David J. Griffiths</span>
+                  </div>
+                  <p class="book-review">
+                    Perhaps the most beautifully written textbook in physics. Griffiths manages to make the complex world of Maxwell's equations intuitive, engaging, and clear.
+                  </p>
+                </div>
+				<!-- Κουμπί για μετάβαση στη Βιβλιοθήκη -->
+                <div class="article-actions" style="margin-top: 25px;">
+				 <a href="library.html" class="article-btn">Enter the Digital Library &amp; Bookshelf ➔</a>
+				</div>
+				
+			
+
+              </div>
+            </article>
+          </section>
+
+          <!-- ΔΕΞΙΑ ΣΤΗΛΗ: ANIPHYS -->
+          <section class="editorial-column aniphys-col">
+            <h2 class="section-editorial-title">ANIPHYS (PHYSICS ANIMATIONS)</h2>
+            <p class="section-editorial-subtitle">Visualizing complex physical concepts, plasma discharges, and scientific phenomena through 3D rendering and physics engines.</p>
+            
+            <!-- Animation Item 1 (Connected to your YouTube Playlist) -->
+            <article class="editorial-article">
+              <h3 class="article-title">Custom Ergonomic Mouse Design &amp; Development for CTS Prevention</h3>
+              <p class="article-meta">Topic: Ergonomic Product Design, CAD Modeling &amp; 3D Printing</p>
+              
+              <div class="video-container">
+                <!-- Embed video link here -->
+                <iframe src="https://www.youtube.com/embed/dVU4djLjZXc" referrerpolicy="strict-origin-when-cross-origin" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              
+              <p class="article-text italic-caption">
+                A step-by-step presentation detailing the creation of a custom vertical ergonomic mouse. The project explores wrist anatomy and Carpal Tunnel Syndrome (CTS) causes, covers 3D CAD design using Autodesk Inventor, and culminates in 3D printing and assembling a functional prototype designed to maintain a natural, strain-free wrist posture. 
+              </p>
+            </article>
+
+            <!-- Animation Item 2 (Connected to your YouTube Playlist) -->
+            <article class="editorial-article">
+              <h3 class="article-title">Solving the 2D Laplace Equation with Finite Difference Method in MATLAB</h3>
+              <p class="article-meta">Topic: Computational Mathematics, Finite Difference Method &amp; MATLAB App Development</p>
+              
+              <div class="video-container">
+                <!-- Embed video link here -->
+                <iframe src="https://www.youtube.com/embed/oEdlxMX_nGg?si=_VnAwvymfzdgM1qo" referrerpolicy="strict-origin-when-cross-origin" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              
+              <p class="article-text italic-caption">
+                An educational walkthrough on solving the 2D Laplace Equation with Dirichlet boundary conditions. The presentation covers the mathematical discretization process, the derivation of derivatives using the Finite Difference Method to construct the stiffness matrix, and the development of an interactive MATLAB App Designer interface to solve and visualize the resulting potential distribution.
+              </p>
+            </article>
+			
+			</article>
+			<!-- Animation Item 3 (Connected to your YouTube Playlist) -->
+            <article class="editorial-article">
+              <h3 class="article-title">How a Photomultiplier Tube (PMT) Works</h3>
+              <p class="article-meta">Topic: Physics, Optoelectronics, Photoelectric Effect &amp; Signal Amplification</p>
+              
+              <div class="video-container">
+                <!-- Αντικαταστήστε το [YOUR_YOUTUBE_URL] με το link του βίντεο -->
+                <iframe src="https://www.youtube.com/embed/jRlFU7HxKpY" referrerpolicy="strict-origin-when-cross-origin" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+              </div>
+              
+              <p class="article-text italic-caption">
+                An educational animation illustrating the fundamental principles and inner workings of a Photomultiplier Tube (PMT). The video explains how incident light strikes a photosensitive photocathode to release electrons via the photoelectric effect, which are then accelerated and multiplied through a series of dynodes to produce a highly measurable electrical signal.
+              </p>
+            </article>
+            
+
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Σύνδεση με το κεντρικό JavaScript -->
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

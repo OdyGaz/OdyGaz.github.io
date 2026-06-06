@@ -6,33 +6,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const popTrigger = document.getElementById('pop-trigger');
     const targetBubble = document.getElementById('target-bubble');
     const cvTargetBubble = document.getElementById('cv-target-bubble');
+    const teachingBubble = document.getElementById('teaching-target-bubble');
+    const portfolioBubble = document.getElementById('portfolio-target-bubble');
 
-    if (popTrigger && targetBubble && cvTargetBubble) {
+    // Έλεγχος ότι βρισκόμαστε στην αρχική σελίδα και υπάρχουν όλα τα στοιχεία
+    if (popTrigger && targetBubble && cvTargetBubble && teachingBubble && portfolioBubble) {
+        
         popTrigger.addEventListener('click', () => {
-            // 1. Τυχαίες συντεταγμένες για τη φυσαλίδα Publications (Κίτρινη)
-            const pubTop = 15 + Math.random() * 70;
-            const pubLeft = 15 + Math.random() * 70;
+            const bubbles = [targetBubble, cvTargetBubble, teachingBubble, portfolioBubble];
+            const placed = []; // Πίνακας για την καταγραφή των θέσεων που έχουν ήδη δοθεί
+            const minDistance = 15; // Ελάχιστη απόσταση (%) μεταξύ των φυσαλίδων
 
-            targetBubble.style.top = `${pubTop}%`;
-            targetBubble.style.left = `${pubLeft}%`;
+            bubbles.forEach(bubble => {
+                let top, left, isValid;
+                let attempts = 0;
 
-            // 2. Τυχαίες συντεταγμένες για τη φυσαλίδα CV / Bio (Γαλάζια)
-            let cvTop = 15 + Math.random() * 70;
-            let cvLeft = 15 + Math.random() * 70;
+                do {
+                    // Παραγωγή τυχαίων συντεταγμένων εντός των ορίων [15%, 80%]
+                    top = 15 + Math.random() * 65;
+                    left = 15 + Math.random() * 65;
+                    isValid = true;
 
-            // Έλεγχος αποφυγής σύγκρουσης: Αν γεννηθούν πολύ κοντά (κάτω από 15% απόσταση),
-            // ξαναπαράγουμε συντεταγμένες για τη γαλάζια φυσαλίδα μέχρι να είναι μακριά.
-            while (Math.abs(cvTop - pubTop) < 15 && Math.abs(cvLeft - pubLeft) < 15) {
-                cvTop = 15 + Math.random() * 70;
-                cvLeft = 15 + Math.random() * 70;
-            }
+                    // Έλεγχος αν η νέα θέση συγκρούεται με κάποια από τις ήδη τοποθετημένες φυσαλίδες
+                    for (const other of placed) {
+                        const distY = Math.abs(top - other.top);
+                        const distX = Math.abs(left - other.left);
+                        if (distY < minDistance && distX < minDistance) {
+                            isValid = false;
+                            break;
+                        }
+                    }
 
-            cvTargetBubble.style.top = `${cvTop}%`;
-            cvTargetBubble.style.left = `${cvLeft}%`;
+                    attempts++;
+                } while (!isValid && attempts < 100); // Ασφάλεια για αποφυγή infinite loop
 
-            // Εμφάνιση και των δύο κύκλων
-            targetBubble.classList.add('visible');
-            cvTargetBubble.classList.add('visible');
+                // Εφαρμογή των σωστών συντεταγμένων και εμφάνιση της φυσαλίδας
+                bubble.style.top = `${top}%`;
+                bubble.style.left = `${left}%`;
+                bubble.classList.add('visible');
+
+                // Καταγραφή της θέσης για τον έλεγχο της επόμενης φυσαλίδας
+                placed.push({ top, left });
+            });
         });
     }
 
