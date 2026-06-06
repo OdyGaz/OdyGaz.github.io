@@ -812,25 +812,6 @@ body {
     100% { box-shadow: 0 0 25px #87cefa, inset 0 0 12px rgba(135, 206, 250, 0.5); }
 }
 
-/* Κοινό στυλ για το ταμπελάκι κειμένου κάτω από τις φυσαλίδες */
-.bubble-text {
-    position: absolute;
-    bottom: -32px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #111;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.6rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    white-space: nowrap;
-    padding: 4px 8px;
-    border-radius: 3px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    pointer-events: none;
-}
-
 /* ΝΕΑ ΚΛΑΣΗ: Το ταμπελάκι κειμένου κάτω από τη φυσαλίδα */
 .bubble-text {
     position: absolute;
