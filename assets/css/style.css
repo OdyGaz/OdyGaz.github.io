@@ -1458,3 +1458,25 @@ body {
   color: var(--text-color);
   transform: translateX(4px);
 }
+
+/* Λευκό φόντο για το πλαίσιο των Contact Links */
+.contact-hover-links {
+    background-color: #ffffff;    /* Λευκό καθαρό φόντο */
+    padding: 15px 20px;           /* "Breathing room" (κενό) γύρω από τα links */
+    border: 1px solid #111111;    /* Λεπτό μαύρο περίγραμμα που ταιριάζει με το minimal στυλ του περιοδικού */
+    border-radius: 4px;           /* Απαλή στρογγυλάδα στις γωνίες */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Σκιά για να "σηκώνεται" τρισδιάστατα πάνω από την εικόνα */
+    
+    /* Διασφάλιση σωστού μεγέθους */
+    min-width: 160px;             
+    box-sizing: border-box;
+}
+
+/* (Προαιρετικό) spacing μεταξύ των links για να μην είναι πολύ κολλημένα */
+.contact-hover-links .sub-link {
+    margin-bottom: 8px;           /* Απόσταση μεταξύ των links */
+    display: block;               /* Διασφαλίζει ότι κάθε link πιάνει τη δική του γραμμή */
+}
+.contact-hover-links .sub-link:last-child {
+    margin-bottom: 0;             /* Αφαίρεση του περιθωρίου από το τελευταίο link */
+}
