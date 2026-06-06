@@ -1331,3 +1331,56 @@ body {
         transform: translateY(0); /* Καταλήγει στην κανονική του θέση */
     }
 }
+/* 1. Ρύθμιση για τη νέα στήλη Contact (div αντί για α) */
+.contact-column {
+  cursor: default; /* Δεν θέλουμε pointer σε όλη τη στήλη, μόνο στα links */
+  position: relative;
+}
+
+/* 2. Στυλ για τον κύριο τίτλο CONTACT (email link) */
+.column-title-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.column-title-link:hover .column-title {
+  color: var(--accent-color); /* Παίρνει το χρώμα hover των άλλων στηλών */
+}
+
+/* 3. Container για τα social links (Αρχικά κρυμμένα) */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none; /* Απενεργοποίηση κλικ όσο είναι κρυφά */
+  transition: opacity 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 4. Εμφάνιση των links με Hover πάνω στη στήλη Contact */
+.contact-column:hover .contact-links {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto; /* Ενεργοποίηση κλικ κατά το hover */
+}
+
+/* 5. Στυλ για τα επιμέρους social links */
+.sub-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: rgba(240, 240, 240, 0.5); /* Αχνό χρώμα */
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sub-link:hover {
+  color: var(--accent-color);
+  transform: translateX(4px); /* Μικρή κίνηση προς τα δεξιά */
+}
