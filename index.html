@@ -16,83 +16,90 @@
 <body>
 
     <div class="magazine-layout">
-        <div class="magazine-container">
+    <div class="magazine-container">
+        
+        <!-- 1. ΚΕΦΑΛΙΔΑ ΠΕΡΙΟΔΙΚΟΥ (Λευκό CSS τμήμα) -->
+        <header class="magazine-header">
             
-            <!-- 1. ΚΕΦΑΛΙΔΑ ΠΕΡΙΟΔΙΚΟΥ (Λευκό CSS τμήμα) -->
-            <header class="magazine-header">
+            <!-- Μικρά στοιχεία αριστερά/δεξιά στην κορυφή -->
+            <div class="header-meta">
+                <span class="meta-left">PORTFOLIO VOL. 1</span>
+                <span class="meta-center">https://odygaz.github.io/</span>
+                <span class="meta-right">Bologna • Nicosia • Jaén • Patras</span>
+            </div>
+            
+            <hr class="header-line">
+            
+            <!-- Κεντρικός Τίτλος (Masthead) -->
+            <h1 class="magazine-title">Odhisea Gazeli</h1>
+            
+            <!-- Υπότιτλος (Tagline) -->
+            <p class="magazine-tagline">PLASMA PHYSICS • PHOTONICS • ANALYTICAL CHEMISTRY</p>
+            
+            <hr class="header-line">
+            
+            <!-- 4-στηλο Μενού / Teasers (Πλοήγηση) -->
+            <nav class="magazine-nav">
+                <a href="pages/cv.html" class="nav-column">
+                    <span class="column-num">I</span>
+                    <h2 class="column-title">CURRICULUM VITAE</h2>
+                    <p class="column-desc">Academic background, plasma physics diagnostics & publications.</p>
+                </a>
+                <a href="pages/teaching.html" class="nav-column">
+                    <span class="column-num">II</span>
+                    <h2 class="column-title">TEACHING & ANIPHYS</h2>
+                    <p class="column-desc">Interactive physics simulations, university tutorials & animations.</p>
+                </a>
+                <a href="pages/portfolio.html" class="nav-column">
+                    <span class="column-num">III</span>
+                    <h2 class="column-title">PORTFOLIO & ART</h2>
+                    <p class="column-desc">Hand-drawn sketches, mechanical automata & scientific posters.</p>
+                </a>
                 
-                <!-- Μικρά στοιχεία αριστερά/δεξιά στην κορυφή -->
-                <div class="header-meta">
-                    <span class="meta-left">PORTFOLIO VOL. 1</span>
-                    <span class="meta-center">https://odygaz.github.io/</span>
-                    <span class="meta-right">Bologna • Nicosia • Jaén • Patras</span>
-                </div>
-                
-                <hr class="header-line">
-                
-                <!-- Κεντρικός Τίτλος (Masthead) -->
-                <h1 class="magazine-title">Odhisea Gazeli</h1>
-                
-                <!-- Υπότιτλος (Tagline) -->
-                <p class="magazine-tagline">PLASMA PHYSICS • PHOTONICS • ANALYTICAL CHEMISTRY</p>
-                
-                <hr class="header-line">
-                
-                <!-- 4-στηλο Μενού / Teasers (Πλοήγηση) -->
-                <nav class="magazine-nav">
-                    <a href="pages/cv.html" class="nav-column">
-                        <span class="column-num">I</span>
-                        <h2 class="column-title">CURRICULUM VITAE</h2>
-                        <p class="column-desc">Academic background, plasma physics diagnostics & publications.</p>
-                    </a>
-                    <a href="pages/teaching.html" class="nav-column">
-                        <span class="column-num">II</span>
-                        <h2 class="column-title">TEACHING & ANIPHYS</h2>
-                        <p class="column-desc">Interactive physics simulations, university tutorials & animations.</p>
-                    </a>
-                    <a href="pages/portfolio.html" class="nav-column">
-                        <span class="column-num">III</span>
-                        <h2 class="column-title">PORTFOLIO & ART</h2>
-                        <p class="column-desc">Hand-drawn sketches, mechanical automata & scientific posters.</p>
-                    </a>
-                    <a href="mailto:gazelisodysseas@gmail.com" class="nav-column">
-                        <span class="column-num">IV</span>
+                <!-- Η 4η στήλη μετατράπηκε σε div για να φιλοξενήσει πολλαπλά links με ασφάλεια -->
+                <div class="nav-column contact-column">
+                    <span class="column-num">IV</span>
+                    <a href="mailto:gazelisodysseas@gmail.com" class="column-title-link">
                         <h2 class="column-title">CONTACT</h2>
-                        <p class="column-desc">Get in touch for research inquiries, collaborations or projects.</p>
                     </a>
-                </nav>
-                
-            </header>
-
-            <!-- 2. ΚΥΡΙΩΣ ΕΙΚΟΝΑ (Hero Image με Ελεύθερες Στρογγυλές Φυσαλίδες) -->
-            <main class="magazine-hero">
-                <!-- Η A4 εικόνα σου -->
-                <img src="assets/images/homepage-cover.png" alt="Odhisea Gazeli Cover Visual" class="hero-img">
-                
-                <!-- Κουμπί POP (Πάνω Δεξιά) -->
-                <div class="pop-button-wrapper" id="pop-trigger" title="Click to reveal target bubble">
-                    <span class="pop-text-fallback">POP</span>
-                    <!-- Αν έχεις εικόνα, αντικαθιστάς το span με το παρακάτω:
-                    <img src="assets/images/pop-btn.png" alt="Pop" class="pop-btn-img"> 
-                    -->
+                    <p class="column-desc">Get in touch for research inquiries, collaborations or projects.</p>
+                    
+                    <!-- Το container με τα social links που εμφανίζονται με Hover -->
+                    <div class="contact-links">
+                        <a href="https://linkedin.com/in/YOUR_USERNAME" target="_blank" class="sub-link">LinkedIn ↗</a>
+                        <a href="https://github.com/OdyGaz" target="_blank" class="sub-link">GitHub ↗</a>
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" class="sub-link">Scholar ↗</a>
+                    </div>
                 </div>
+            </nav>
+            
+        </header>
 
-                
-                <!-- Κυκλικός Σύνδεσμος-Στόχος με κείμενο -->
-                <a href="pages/publications.html" class="interactive-target-bubble publications-bubble" id="target-bubble">
-                    <span class="bubble-text">Go to Publications ↗</span>
-                </a>
-                <!-- 2η Φυσαλίδα-Στόχος: CV / Bio (Γαλάζια) -->
-                <a href="pages/cv.html" class="interactive-target-bubble cv-bubble" id="cv-target-bubble">
-                    <span class="bubble-text">Go to CV / Bio ↗</span>
-                </a>
+        <!-- 2. ΚΥΡΙΩΣ ΕΙΚΟΝΑ (Hero Image με Ελεύθερες Στρογγυλές Φυσαλίδες) -->
+        <main class="magazine-hero">
+            <!-- Η A4 εικόνα σου -->
+            <img src="assets/images/homepage-cover.png" alt="Odhisea Gazeli Cover Visual" class="hero-img">
+            
+            <!-- Κουμπί POP (Πάνω Δεξιά) -->
+            <div class="pop-button-wrapper" id="pop-trigger" title="Click to reveal target bubble">
+                <span class="pop-text-fallback">POP</span>
+            </div>
 
-                <!-- Αόρατο clickable κουτί πάνω από το Barcode (κάτω αριστερά) -->
-                <a href="pages/cv.html" class="barcode-hitbox" title="Go to CV"></a>
-            </main>
+            <!-- Κυκλικός Σύνδεσμος-Στόχος με κείμενο (Έχει προστεθεί σωστά η κλάση publications-bubble) -->
+            <a href="pages/publications.html" class="interactive-target-bubble publications-bubble" id="target-bubble">
+                <span class="bubble-text">Go to Publications ↗</span>
+            </a>
+            <!-- 2η Φυσαλίδα-Στόχος: CV / Bio (Γαλάζια) -->
+            <a href="pages/cv.html" class="interactive-target-bubble cv-bubble" id="cv-target-bubble">
+                <span class="bubble-text">Go to CV / Bio ↗</span>
+            </a>
 
-        </div>
+            <!-- Αόρατο clickable κουτί πάνω από το Barcode (κάτω αριστερά) -->
+            <a href="pages/cv.html" class="barcode-hitbox" title="Go to CV"></a>
+        </main>
+
     </div>
+</div>
 
     <!-- Σύνδεση με το κεντρικό JavaScript (main.js) -->
     <script src="assets/js/main.js"></script>
