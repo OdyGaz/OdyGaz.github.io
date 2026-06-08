@@ -1,56 +1,74 @@
-# Odhisea Gazeli - Interactive Academic Portfolio
+# 📖 Editorial Academic Portfolio (Vol. 1) | Odysseas Gazelis
 
-Καλώς ορίσατε στο προσωπικό μου αποθετήριο. Ο ιστότοπος αυτός (διαθέσιμος στο [odygaz.github.io](https://odygaz.github.io/)) λειτουργεί ως ένα διαδραστικό, ψηφιακό portfolio σχεδιασμένο με τη φιλοσοφία και την αισθητική ενός σύγχρονου επιστημονικού περιοδικού (**Magazine Editorial Style**).
+Welcome to the official repository of my personal portfolio, styled as a premium physical magazine.
 
-Η σχεδίαση εστιάζει στην καθαρή τυπογραφία, τη σταθερή οπτική ιεραρχία (ενιαίο πλάτος 1050px) και την ενσωμάτωση διαδραστικών στοιχείων που κάνουν την πλοήγηση πιο ζωντανή.
+🔗 **Live Website:** [odygaz.github.io](https://odygaz.github.io/)
 
 ---
 
-## 📂 Δομή Φακέλων & Αρχείων
+## 🎨 The Concept: "Portfolio Vol. 1"
+Unlike standard bootstrap-based personal websites, this portfolio is built with an **editorial/magazine layout** in mind.
+Emphasizing clean grids, elegant serif typography (`Playfair Display` & `Inter`), natural paper-textured backgrounds, 
+and asymmetrical spacing, it replicates the feel of a printed science and arts publication.
+
+---
+
+## 🚀 Key Features & Pages
+
+- **Interactive Magazine Cover (`index.html`)**
+  - Features a clean, physical cover style with subtle animations.
+  - A dynamic floating bubble interaction that serves as a gamified menu.
+- **Curriculum Vitae (`pages/cv.html`)**
+  - Complete academic background, publications list, and software skills.
+  - Interactive filterable categories (e.g., conferences, grants).
+  - Embedded image-modal triggers for certifications and credentials.
+- **Publications & Gamified Papers (`pages/publications.html`)**
+  - Comprehensive list of peer-reviewed journal articles.
+  - An interactive **"Hidden Object" bubble game** that dynamically highlights and links to articles on click without triggering browser popup-blockers.
+- **Teaching & Visual Physics (`pages/teaching.html`)**
+  - Academic teaching history.
+  - Embedded video simulations (AniPhys animations).
+- **Portfolio & Art (`pages/portfolio.html`)**
+  - **Mechanical Automata:** Showcases physical kinetic sculptures in an elegant dual-photo grid.
+  - **Fine Art & Drawings:** A clean museum-catalog grid of simple sketches.
+  - **Scientific Posters:** High-resolution PNG layouts that open directly in a new tab for zoomable, crystal-clear readability.
+- **Digital Bookshelf (`pages/library.html`)**
+  - A curated list of reference textbooks.
+  - Uses smart CSS grids with immediate fallback cover image handling (`onerror` fallback).
+
+---
+
+## 🛠️ Tech Stack & Architecture
+
+- **Languages:** HTML5, CSS3, JavaScript (ES6+).
+- **Architecture:** Zero-dependency, vanilla frontend for extremely lightweight assets and sub-second load times.
+- **Hosting:** Deployable directly via GitHub Pages.
+
+---
+
+## 📂 Repository Structure
 
 ```text
-OdyGaz.github.io/ (Root)
-│
-├── index.html               # Η Αρχική Σελίδα (Magazine Cover)
-├── README.md                # Αυτό το αρχείο πληροφοριών
-├── .nojekyll                # Αρχείο για τη σωστή λειτουργία στο GitHub Pages
-│
-├── pages/                   # Φάκελος εσωτερικών σελίδων
-│   ├── cv.html              # Σελίδα Βιογραφικού (Magazine Dossier)
-│   └── publications.html    # Σελίδα Δημοσιεύσεων (Magazine Spread)
-│
-└── assets/                  # Στατικά στοιχεία (Static Assets)
-    ├── css/
-    │   └── style.css        # Ενιαίο Master CSS για όλο το site
-    ├── js/
-    │   └── main.js          # Κεντρικό JavaScript για τις διαδραστικές λειτουργίες
-    └── images/              # Εικόνες (banners, avatar, πιστοποιητικά, κλπ.)
+├── assets/
+│   ├── css/
+│   │   └── style.css          # Main editorial styling (CV, Grid, Pages)
+│   ├── documents/
+│   │   └── cv-odisea-gazeli.pdf
+│   ├── images/
+│   │   ├── books/             # Textbook thumbnails
+│   │   ├── posters/           # High-resolution scientific poster PNGs
+│   │   ├── drawings/          # Fine art images
+│   │   ├── automata/          # Mechanical creation images
+│   │   ├── avatar.png
+|   |   ├── ...
+│   │   └── homepage-cover.png
+│   └── js/
+│       └── main.js            # Interactive bubble game & CV logic
+├── pages/
+│   ├── cv.html
+│   ├── library.html
+│   ├── portfolio.html
+│   ├── publications.html
+│   └── teaching.html
+└── index.html                 # Interactive cover page
 ```
-
----
-
-## 🌟 Βασικά Χαρακτηριστικά
-
-### 1. Αρχική Σελίδα (index.html) - Εξώφυλλο Περιοδικού
-* **Editorial Masthead:** Καθαρός τίτλος και 4-στηλο μενού πλοήγησης.
-* **Barcode Shortcut:** Ένα αόρατο, clickable πλαίσιο πάνω από το barcode (κάτω αριστερά) οδηγεί άμεσα στο βιογραφικό.
-* **POP & Reveal Targets:** Ένα κουμπί "POP" στην πάνω δεξιά γωνία παράγει ταυτόχρονα δύο glowing φυσαλίδες (μία κίτρινη για τις Δημοσιεύσεις και μία γαλάζια για το CV) σε τυχαία σημεία της εικόνας, με αυτόματο σύστημα αποφυγής σύγκρουσης ώστε να μην επικαλύπτονται.
-
-### 2. Βιογραφικό (pages/cv.html) - Interactive Dossier
-* **Lego Grid Header:** Μια συμμετρική διάταξη 3 στηλών (Education - Custom Lego Avatar - Professional Experience).
-* **Interactive Tabs:** Διαχωρισμός του μεγάλου όγκου πληροφοριών σε 4 διαδραστικές καρτέλες:
-  * **Projects & Grants:** Τα ερευνητικά προγράμματα (PULSE, Pythagoras, TImPANI) με καθαρή δομή.
-  * **Teaching & Tutoring:** Αναλυτική λίστα των πανεπιστημιακών μαθημάτων.
-  * **Skills & Softwares:** Οργάνωση των τεχνικών και υπολογιστικών δεξιοτήτων σε πλέγμα.
-  * **Conferences & Seminars (με Φίλτρα):** Συμπυκνωμένη λίστα συνεδρίων με διαδραστικά φίλτρα (All, Oral, Poster, Seminars) για άμεση ταξινόμηση χωρίς καθυστέρηση.
-* **Credentials & Featured Certificates:** Ειδική ενότητα που συνδυάζει τη δραστηριότητα Reviewer (IOP Awards) με ένα πλέγμα 5 επιλεγμένων πιστοποιητικών (MATLAB & IOP).
-* **Certificate Lightbox Modal:** Ένα κουμπί "View All" ανοίγει ένα αναδυόμενο overlay παράθυρο που εμφανίζει το πλήρες κολλάζ με τα πιστοποιητικά μου.
-
-### 3. Δημοσιεύσεις (pages/publications.html) - Double-Page Spread
-Σχεδιασμένο ως δισέλιδο σαλονιού περιοδικού:
-* **Αριστερή Στήλη (Άρθρο):** Μια scrollable, χρονολογικά ταξινομημένη βάση δεδομένων με επιστημονικές δημοσιεύσεις (έτη 2020-2026).
-* **Δεξιά Στήλη (Παιχνίδι - Hidden Object Game):** Μια δυναμική JavaScript παράγει glowing φυσαλίδες πάνω στο κολλάζ των papers. Όταν ο χρήστης κάνει κλικ σε μια φυσαλίδα:
-  1. Η λίστα αριστερά κάνει scroll και highlight την αντίστοιχη δημοσίευση.
-  2. Ανοίγει αυτόματα το DOI link της δημοσίευσης σε νέο tab του browser.
-
----
