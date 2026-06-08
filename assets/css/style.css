@@ -1874,3 +1874,288 @@ body {
     0% { box-shadow: 0 0 10px #ffb37e, inset 0 0 5px rgba(255, 179, 126, 0.2); }
     100% { box-shadow: 0 0 25px #ffb37e, inset 0 0 12px rgba(255, 179, 126, 0.5); }
 }
+/* ==========================================================================
+   7. ΣΕΛΙΔΑ PORTFOLIO & ART (pages/portfolio.html)
+   ========================================================================== */
+
+.portfolio-page-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ededf0; /* Το ίδιο γκρι φόντο χαρτιού με το CV */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+}
+
+.portfolio-intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.portfolio-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.portfolio-main-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    font-style: italic;
+}
+
+/* Διαχωριστικά ενοτήτων */
+.section-break {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 50px 0;
+}
+
+/* Editorial Headers για κάθε Section */
+.section-editorial-header {
+    margin-bottom: 30px;
+}
+
+.section-roman-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-style: italic;
+    color: #888;
+    display: block;
+    line-height: 1;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 5px 0 10px 0;
+}
+
+.section-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* --- SECTION I: AUTOMATA (Side-by-side) --- */
+.automata-dual-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.automata-card {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.portfolio-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img-caption {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 12px;
+    line-height: 1.4;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+}
+
+/* --- SECTION II: DRAWINGS GALLERY (Grid) --- */
+.drawings-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.drawing-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.drawing-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.drawing-info {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.drawing-title {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.drawing-medium {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #777;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+/* --- SECTION III: SCIENTIFIC POSTERS (Card Grid) --- */
+.posters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.poster-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.poster-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ΔΙΟΡΘΩΣΗ: Αφαιρούμε το σταθερό aspect-ratio και επιβάλλουμε το auto */
+.poster-thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: auto !important; /* Ξεκλειδώνει οριστικά την αναλογία 3/4 */
+    overflow: hidden;
+    background-color: #fff; 
+}
+
+/* ΔΙΟΡΘΩΣΗ: Η εικόνα παίρνει το φυσικό της ύψος χωρίς καμία περικοπή */
+.poster-thumb {
+    width: 100% !important;
+    height: auto !important; /* Επιβάλλει το φυσικό ύψος της εικόνας */
+    display: block !important;
+    transition: transform 0.3s ease;
+}
+
+/* Overlay που εμφανίζεται στο hover */
+/* --- SECTION III: SCIENTIFIC POSTERS (Card Grid) --- */
+.posters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.poster-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.poster-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* ΔΙΟΡΘΩΣΗ: Αφαιρούμε το σταθερό aspect-ratio ώστε να προσαρμόζεται στο ύψος του poster */
+.poster-thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff; 
+}
+
+/* ΔΙΟΡΘΩΣΗ: Η εικόνα παίρνει το φυσικό της ύψος (auto) για να μην κόβεται καθόλου */
+.poster-thumb {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Overlay εφέ στο hover (προσαρμόζεται αυτόματα στο νέο ύψος) */
+.poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.poster-card:hover .poster-overlay {
+    opacity: 1;
+}
+
+.poster-card:hover .poster-thumb {
+    transform: scale(1.02); /* Μικρότερο scale για να μην χάνει σε ευκρίνεια στο hover */
+}
+
+.overlay-text {
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.poster-details {
+    padding: 15px;
+    border-top: 1px solid #eee;
+    background-color: #fff;
+}
+
+.poster-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.poster-event {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: #777;
+    font-style: italic;
+}
+
+/* Responsive Ρυθμίσεις για Κινητά */
+@media (max-width: 768px) {
+    .automata-dual-layout,
+    .posters-grid {
+        grid-template-columns: 1fr; /* Μετατροπή σε μονοστήλο layout στα κινητά */
+        gap: 20px;
+    }
+}
