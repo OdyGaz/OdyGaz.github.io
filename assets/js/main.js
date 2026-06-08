@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 setTimeout(() => {
                     window.open(paper.url, '_blank');
-                }, 400);
+                }, 300);
 
                 bubble.style.transform = 'scale(0)';
                 bubble.style.opacity = '0';
