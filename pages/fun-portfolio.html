@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Engineering & DIY - Odhisea Gazeli</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="magazine-layout">
+        <div class="magazine-container">
+            
+            <!-- ΚΟΙΝΗ ΚΕΦΑΛΙΔΑ ΠΕΡΙΟΔΙΚΟΥ (Masthead) -->
+            <header class="magazine-header">
+                <div class="header-meta">
+                    <span class="meta-left">PORTFOLIO VOL. 1</span>
+                    <span class="meta-center">https://odygaz.github.io/</span>
+                    <span class="meta-right">Bologna • Nicosia • Jaén • Patras</span>
+                </div>
+                <hr class="header-line">
+                <h1 class="magazine-title">Odhisea Gazeli</h1>
+                <p class="magazine-tagline">PLASMA PHYSICS • PHOTONICS • ANALYTICAL CHEMISTRY</p>
+                <hr class="header-line">
+
+                <!-- Μενού Πλοήγησης (Κρατάμε ΑΥΣΤΗΡΑ τις 4 στήλες) -->
+                <nav class="magazine-nav">
+                    <a href="../index.html" class="nav-column">
+                        <span class="column-num">Home</span>
+                        <h2 class="column-title">BACK TO COVER</h2>
+                        <p class="column-desc">Return to the interactive magazine cover.</p>
+                    </a>
+                    <a href="cv.html" class="nav-column">
+                        <span class="column-num">I</span>
+                        <h2 class="column-title">CURRICULUM VITAE</h2>
+                        <p class="column-desc">Academic background, plasma physics diagnostics &amp; publications.</p>
+                    </a>
+                    <a href="teaching.html" class="nav-column">
+                        <span class="column-num">II</span>
+                        <h2 class="column-title">TEACHING &amp; ANIPHYS</h2>
+                        <p class="column-desc">Interactive physics simulations, university tutorials &amp; animations.</p>
+                    </a>
+                    <a href="publications.html" class="nav-column">
+                        <span class="column-num">III</span>
+                        <h2 class="column-title">PUBLICATIONS</h2>
+                        <p class="column-desc">Peer-reviewed journal articles and research works.</p>
+                    </a>
+                </nav>
+            </header>
+
+            <!-- ΚΥΡΙΩΣ ΠΕΡΙΕΧΟΜΕΝΟ PORTFOLIO -->
+            <main class="portfolio-page-content">
+                
+                <!-- Πλοήγηση Επιστροφής στο Portfolio Gateway -->
+                <div style="margin-bottom: 35px; margin-top: 15px;">
+                    <a href="portfolio.html" style="text-decoration: none; color: #111111; font-family: 'Georgia', serif; font-size: 0.9rem; font-weight: bold; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 6px;">
+                        ← BACK TO PORTFOLIO SECTIONS
+                    </a>
+                </div>
+
+                <div class="portfolio-intro">
+                    <h2 class="portfolio-main-title">CREATIVE ENGINEERING &amp; DIY</h2>
+                    <p class="portfolio-main-subtitle">A collection of custom microcontrollers, hardware hacks, custom mechanics, and physical prototypes.</p>
+                </div>
+
+                <!-- SECTION I: DIY MAKER PROJECTS -->
+                <section class="portfolio-section">
+                    <div class="section-editorial-header">
+                        <span class="section-roman-num">I</span>
+                        <h3 class="section-title">DIY MAKER PROJECTS</h3>
+                        <p class="section-desc">Handcrafted mechanical and electronic prototypes developed using recycled parts, microcontrollers, and rapid fabrication.</p>
+                    </div>
+                    
+                    <!-- Χρήση του διπλού layout (automata-dual-layout) για 3D Plotter και DIY Mouse -->
+                    <div class="automata-dual-layout">
+                        <!-- Project 1: Arduino 3D Plotter -->
+                        <div class="automata-card">
+                            <img src="../assets/images/portfolio/arduino-plotter.jpg" alt="Handmade Arduino 3D Plotter" class="portfolio-img">
+                            <div class="drawing-info" style="padding: 15px 0; text-align: left;">
+                                <span class="drawing-title" style="font-weight: bold; display: block; margin-bottom: 6px;">Handmade 3D Plotter from Scratch</span>
+                                <p style="font-size: 0.85rem; line-height: 1.45; color: #555555; margin: 0;">Built using an Arduino microcontroller, recycled DVD-drive stepper motors, and a PC power supply. The plotter is controlled using the open-source GRBL firmware to write and sketch designs.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 2: DIY PC Mouse -->
+                        <div class="automata-card">
+                            <img src="../assets/images/portfolio/diy-mouse.jpg" alt="DIY PC Mouse" class="portfolio-img">
+                            <div class="drawing-info" style="padding: 15px 0; text-align: left;">
+                                <span class="drawing-title" style="font-weight: bold; display: block; margin-bottom: 6px;">3D Printed DIY PC Mouse</span>
+                                <p style="font-size: 0.85rem; line-height: 1.45; color: #555555; margin: 0;">An ergonomic computer mouse built using custom-designed 3D printed structural parts, integrated battery power channels, and internal optical sensor circuitry.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="section-break">
+
+                <!-- SECTION II: ELECTRONICS & EMBEDDED SYSTEMS -->
+                <section class="portfolio-section">
+                    <div class="section-editorial-header">
+                        <span class="section-roman-num">II</span>
+                        <h3 class="section-title">ELECTRONICS &amp; EMBEDDED SYSTEMS</h3>
+                        <p class="section-desc">Custom hardware circuits focusing on signal modulation, power control, and microcontroller-based signal generators.</p>
+                    </div>
+
+                    <!-- Χρήση του διπλού layout για τα κυκλώματα PWM -->
+                    <div class="automata-dual-layout">
+                        <!-- Project 3: PWM Generator with LCD -->
+                        <div class="automata-card">
+                            <img src="../assets/images/portfolio/pwm-generator.jpg" alt="Arduino PWM Generator" class="portfolio-img">
+                            <div class="drawing-info" style="padding: 15px 0; text-align: left;">
+                                <span class="drawing-title" style="font-weight: bold; display: block; margin-bottom: 6px;">Arduino PWM Signal Generator</span>
+                                <p style="font-size: 0.85rem; line-height: 1.45; color: #555555; margin: 0;">An embedded signal generator using an Arduino and breadboard setup, equipped with an LCD panel to monitor frequency output and signal modulation status in real-time.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 4: PWM Circuit Control -->
+                        <div class="automata-card">
+                            <img src="../assets/images/portfolio/pwm-circuit.jpg" alt="PWM Analog Circuits" class="portfolio-img">
+                            <div class="drawing-info" style="padding: 15px 0; text-align: left;">
+                                <span class="drawing-title" style="font-weight: bold; display: block; margin-bottom: 6px;">PWM Circuit Controls</span>
+                                <p style="font-size: 0.85rem; line-height: 1.45; color: #555555; margin: 0;">Analog control circuits designed to modulate power conversion, ideal for communications, motor control, and custom low-voltage electrical systems.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <hr class="section-break">
+
+                <!-- SECTION III: 3D CAD MODELING & RENDERS -->
+                <section class="portfolio-section">
+                    <div class="section-editorial-header">
+                        <span class="section-roman-num">III</span>
+                        <h3 class="section-title">3D CAD MODELING &amp; RENDERS</h3>
+                        <p class="section-desc">Precision structural blueprints, ornamental architectural structures, and technical machine component modeling.</p>
+                    </div>
+
+                    <!-- Gallery Grid για τα CAD σχέδια -->
+                    <div class="drawings-gallery-grid">
+                        
+                        <!-- CAD Project 1: Hanging Shelf -->
+                        <div class="drawing-item">
+                            <img src="../assets/images/portfolio/cad-shelf.jpg" alt="Hanging Shelf Render" class="portfolio-img">
+                            <div class="drawing-info" style="padding: 15px; text-align: left;">
+                                <span class="drawing-title" style="font-weight: bold; display: block; margin-bottom: 6px;">Hanging Wrought Iron Shelf</span>
+                                <p style="font-size: 0.85rem; line-height: 1.45; color: #555555; margin: 0;">Parametric modeling of a suspended wall shelf with ornate ironwork patterns and structural stability calculations.</p>
+                            </div>
+                        </div>
+
+                        <!-- CAD Project 2: CAD parts grid -->
+                        <div class="drawing-item">
+                            <img src="../assets/images/portfolio/cad-parts.jpg" alt="Mechanical Parts Grid" class="portfolio-img">
+                            <div class="drawing-info" style="padding: 15px; text-align: left;">
+                                <span class="drawing-title" style="font-weight: bold; display: block; margin-bottom: 6px;">Mechanical &amp; Fixture Components</span>
+                                <p style="font-size: 0.85rem; line-height: 1.45; color: #555555; margin: 0;">A detailed suite of structural engineering parts, brackets, and machine mounts designed for precise assembly and fabrication.</p>
+                            </div>
+                        </div>
+
+                        <!-- CAD Project 3: Canopy shelter -->
+                        <div class="drawing-item">
+                            <img src="../assets/images/portfolio/cad-canopy.jpg" alt="CAD Canopy Shelter" class="portfolio-img">
+                            <div class="drawing-info" style="padding: 15px; text-align: left;">
+                                <span class="drawing-title" style="font-weight: bold; display: block; margin-bottom: 6px;">Canopy Shelter Frame</span>
+                                <p style="font-size: 0.85rem; line-height: 1.45; color: #555555; margin: 0;">A full structural frame design for protective canopy roofing, showcasing structural steel layouts and joint geometry.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
+
+        </div>
+    </div>
+</body>
+</html>
