@@ -2159,3 +2159,36 @@ body {
         gap: 20px;
     }
 }
+
+/* ==========================================================================
+   Στυλ για το κουμπί Explore Sketchbook (Section II)
+   ========================================================================== */
+
+/* Container για την ασύμμετρη (αριστερή) τοποθέτηση του κουμπιού */
+.explore-btn-container {
+    width: 100%;
+    margin-top: 30px; /* Απόσταση από το grid των σχεδίων */
+    display: flex;
+    justify-content: flex-start; /* Αριστερή ευθυγράμμιση (Editorial Style) */
+}
+
+.explore-btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border: 1px solid #111111; /* Λεπτό μαύρο πλαίσιο */
+    background-color: transparent;
+    color: #111111;
+    text-decoration: none; /* Αφαίρεση της μωβ υπογράμμισης */
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: all 0.2s ease-in-out;
+}
+
+.explore-btn:hover {
+    background-color: #111111; /* Γίνεται μαύρο στο hover */
+    color: #ffffff;            /* Τα γράμματα γίνονται λευκά */
+    transform: translateY(-2px); /* Μικρό ανασήκωμα */
+}

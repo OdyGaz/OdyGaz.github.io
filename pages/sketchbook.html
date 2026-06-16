@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchbook & Studies of Motion</title>
+    
+    <!-- Google Fonts: 
+         1. Playfair Display (Serif για τίτλους / editorial αίσθηση)
+         2. Inter (Sans-serif για καθαρό, αναγνώσιμο κείμενο)
+         3. Caveat (Handwritten για τις Da Vinci σημειώσεις και διαγράμματα) 
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Σύνδεση με το κεντρικό CSS του site σου (αν υπάρχει) -->
+    <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
+    
+    <!-- Σύνδεση με το ειδικό CSS για το Sketchbook -->
+    <link rel="stylesheet" href="../assets/css/sketchbook.css">
+</head>
+<body class="notebook-body">
+
+    <!-- Header πλοήγησης με το κουμπί επιστροφής -->
+    <header class="notebook-header">
+        <div class="header-container">
+            <!-- Αν η αρχική σου σελίδα είναι το index.html στο root, το ../index.html είναι σωστό.
+                 Αν θέλεις να επιστρέφει σε άλλη σελίδα, αλλάζεις το href αναλόγως. -->
+            <a href="../index.html" class="back-btn">
+                ← Back to Editorial Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Κεντρικό περιεχόμενο της σελίδας -->
+    <main class="notebook-container">
+        
+        <!-- Εισαγωγή / Τίτλος του Notebook -->
+        <header class="notebook-intro">
+            <span class="volume-tag">Vol. I / Section II</span>
+            <h1 class="notebook-title">An archival collection of sketches</h1>
+            <p class="notebook-subtitle">
+            </p>
+        </header>
+
+        <!-- Το "άδειο" κοντέινερ στο οποίο η JavaScript θα χτίσει δυναμικά τα σχέδια και τις σημειώσεις σου -->
+        <div id="notebook-paper" class="notebook-paper-grid">
+            <!-- Τα σκίτσα θα εμφανιστούν εδώ αυτόματα μέσω του sketchbook.js -->
+        </div>
+
+    </main>
+
+    <!-- Footer με minimal ακαδημαϊκή αναφορά -->
+    <footer class="notebook-footer">
+        <p>© Odysseas Gazelis — Physics & Fine Arts Initiative</p>
+    </footer>
+
+    <!-- Σύνδεση με το JS αρχείο που περιέχει τα δεδομένα και τη δυναμική σχεδίαση -->
+    <script src="../assets/js/sketchbook.js"></script>
+</body>
+</html>
