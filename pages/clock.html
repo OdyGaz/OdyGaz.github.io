@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casio Retro Clock - Odhisea Gazeli</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <div class="magazine-layout">
+    <div class="magazine-container">
+      
+      <!-- ΚΟΙΝΗ ΚΕΦΑΛΙΔΑ (Masthead) -->
+      <header class="magazine-header">
+        <div class="header-meta">
+          <span class="meta-left">PORTFOLIO VOL. 1</span>
+          <span class="meta-center">https://odygaz.github.io/</span>
+          <span class="meta-right">Bologna • Nicosia • Jaén • Patras</span>
+        </div>
+        <hr class="header-line">
+        <h1 class="magazine-title">Odhisea Gazeli</h1>
+        <p class="magazine-tagline">PLASMA PHYSICS • PHOTONICS • ANALYTICAL CHEMISTRY</p>
+        <hr class="header-line">
+        
+        <!-- Μενού Πλοήγησης (Κρατάμε ΑΥΣΤΗΡΑ τις 4 στήλες) -->
+        <nav class="magazine-nav">
+          <a href="../index.html" class="nav-column">
+            <span class="column-num">Home</span>
+            <h2 class="column-title">BACK TO COVER</h2>
+            <p class="column-desc">Return to the interactive magazine cover.</p>
+          </a>
+          <a href="teaching.html" class="nav-column">
+            <span class="column-num">I</span>
+            <h2 class="column-title">BACK TO TEACHING</h2>
+            <p class="column-desc">Return to the articles, tutorials and animations.</p>
+          </a>
+          <a href="cv.html" class="nav-column">
+            <span class="column-num">II</span>
+            <h2 class="column-title">CURRICULUM VITAE</h2>
+            <p class="column-desc">Academic background, plasma physics diagnostics &amp; publications.</p>
+          </a>
+          <a href="library.html" class="nav-column">
+            <span class="column-num">III</span>
+            <h2 class="column-title">LIBRARY</h2>
+            <p class="column-desc">Return to the digital library and bookshelf.</p>
+          </a>
+        </nav>
+      </header>
+
+      <!-- ΠΕΡΙΕΧΟΜΕΝΟ ΡΟΛΟΓΙΟΥ -->
+      <main class="library-page-content">
+        <div class="library-intro">
+          <h2 class="library-main-title">RETRO DIGITAL CLOCK</h2>
+          <p class="library-main-subtitle">🤓 📑 🗒️</p>
+        </div>
+
+        <!-- Κεντρικός χώρος εργασίας (Watch & Controls) -->
+        <div class="clock-workspace">
+          
+          <!-- Το SVG Καντράν της Casio -->
+          <div class="watch-container">
+            <svg id="casio-svg" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="chrome-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f2f2f2" />
+                  <stop offset="15%" stop-color="#e1e1e1" />
+                  <stop offset="30%" stop-color="#cccccc" />
+                  <stop offset="45%" stop-color="#ffffff" />
+                  <stop offset="55%" stop-color="#b5b5b5" />
+                  <stop offset="75%" stop-color="#8c8c8c" />
+                  <stop offset="100%" stop-color="#dfdfdf" />
+                </linearGradient>
+
+                <!-- Το φόντο της LCD οθόνης με δυνατότητα φωτισμού -->
+                <linearGradient id="lcd-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#b6bea9" id="lcd-stop-1" />
+                  <stop offset="50%" stop-color="#c5ccb8" id="lcd-stop-2" />
+                  <stop offset="100%" stop-color="#b0b8a3" id="lcd-stop-3" />
+                </linearGradient>
+
+                <linearGradient id="bezel-shading" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#737373" />
+                  <stop offset="50%" stop-color="#d9d9d9" />
+                  <stop offset="100%" stop-color="#595959" />
+                </linearGradient>
+                
+                <filter id="inner-shadow">
+                  <feOffset dx="1" dy="2"/>
+                  <feGaussianBlur stdDeviation="2" result="offset-blur"/>
+                  <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+                  <feFlood flood-color="black" flood-opacity="0.6" result="color"/>
+                  <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+                  <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+                </filter>
+              </defs>
+
+              <!-- === ΜΠΡΑΣΕΛΕ === -->
+              <g id="bracelet-top">
+                <polygon points="180,0 320,0 330,110 170,110" fill="url(#chrome-grad)" stroke="#666" stroke-width="0.5" />
+                <line x1="178" y1="25" x2="322" y2="25" stroke="#3a3a3a" stroke-width="1.2" />
+                <line x1="176" y1="50" x2="324" y2="50" stroke="#3a3a3a" stroke-width="1.2" />
+                <line x1="173" y1="75" x2="327" y2="75" stroke="#3a3a3a" stroke-width="1.2" />
+                <line x1="170" y1="100" x2="330" y2="100" stroke="#3a3a3a" stroke-width="1.2" />
+                <line x1="205" y1="0" x2="198" y2="110" stroke="#444" stroke-width="1" />
+                <line x1="220" y1="0" x2="215" y2="110" stroke="#444" stroke-width="1" />
+                <line x1="280" y1="0" x2="285" y2="110" stroke="#444" stroke-width="1" />
+                <line x1="295" y1="0" x2="302" y2="110" stroke="#444" stroke-width="1" />
+              </g>
+
+              <g id="bracelet-bottom">
+                <polygon points="170,490 330,490 320,600 180,600" fill="url(#chrome-grad)" stroke="#666" stroke-width="0.5" />
+                <line x1="170" y1="500" x2="330" y2="500" stroke="#3a3a3a" stroke-width="1.2" />
+                <line x1="173" y1="525" x2="327" y2="525" stroke="#3a3a3a" stroke-width="1.2" />
+                <line x1="176" y1="550" x2="324" y2="550" stroke="#3a3a3a" stroke-width="1.2" />
+                <line x1="178" y1="575" x2="322" y2="575" stroke="#3a3a3a" stroke-width="1.2" />
+                <line x1="198" y1="490" x2="205" y2="600" stroke="#444" stroke-width="1" />
+                <line x1="215" y1="490" x2="220" y2="600" stroke="#444" stroke-width="1" />
+                <line x1="285" y1="490" x2="280" y2="600" stroke="#444" stroke-width="1" />
+                <line x1="302" y1="490" x2="295" y2="600" stroke="#444" stroke-width="1" />
+              </g>
+
+              <!-- === ΠΛΑΪΝΑ ΚΟΥΜΠΙΑ === -->
+              <g id="buttons">
+                <rect x="78" y="222" width="12" height="18" rx="2" fill="url(#chrome-grad)" stroke="#555" stroke-width="1" />
+                <rect x="78" y="360" width="12" height="18" rx="2" fill="url(#chrome-grad)" stroke="#555" stroke-width="1" />
+                <rect x="410" y="222" width="12" height="18" rx="2" fill="url(#chrome-grad)" stroke="#555" stroke-width="1" />
+                <rect x="410" y="360" width="12" height="18" rx="2" fill="url(#chrome-grad)" stroke="#555" stroke-width="1" />
+              </g>
+
+              <!-- === ΕΞΩΤΕΡΙΚΗ ΚΑΣΑ === -->
+              <path d="M 140,110 L 360,110 L 410,160 L 410,440 L 360,490 L 140,490 L 90,440 L 90,160 Z" 
+                    fill="url(#chrome-grad)" stroke="#b5b5b5" stroke-width="2" />
+              <path d="M 148,122 L 352,122 L 398,168 L 398,432 L 352,478 L 148,478 L 102,432 L 102,168 Z" 
+                    fill="url(#bezel-shading)" opacity="0.3" />
+
+              <!-- === ΜΑΥΡΟ ΚΑΝΤΡΑΝ === -->
+              <path d="M 158,135 L 342,135 L 385,178 L 385,422 L 342,465 L 158,465 L 115,422 L 115,178 Z" 
+                    fill="#0d0d0d" stroke="#1f1f1f" stroke-width="1.5" />
+
+              <!-- === ΜΠΛΕ ΔΙΑΚΟΣΜΗΤΙΚΗ ΓΡΑΜΜΗ === -->
+              <path d="M 166,150 L 334,150 L 372,188 L 372,412 L 334,450 L 166,450 L 128,412 L 128,188 Z" 
+                    fill="none" stroke="#0052a3" stroke-width="3" />
+              <path d="M 168,153 L 332,153 L 369,190 L 369,410 L 332,447 L 168,447 L 131,410 L 131,190 Z" 
+                    fill="none" stroke="#00a2ff" stroke-width="1" />
+
+              <!-- === ΚΕΙΜΕΝΑ ΚΑΝΤΡΑΝ === -->
+              <text x="165" y="196" fill="#ffffff" font-size="19" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="900" letter-spacing="0.5">CASIO</text>
+              <text x="250" y="218" fill="#38b0ff" font-size="13" font-family="'Arial Black', Gadget, sans-serif" font-weight="900" letter-spacing="2" text-anchor="middle">◀ ILLUMINATOR ▶</text>
+
+              <!-- === ΟΘΟΝΗ LCD === -->
+              <g id="lcd-screen">
+                <rect x="160" y="235" width="180" height="130" rx="8" ry="8" 
+                      fill="url(#lcd-grad)" stroke="#2b3022" stroke-width="2" filter="url(#inner-shadow)" id="lcd-backlight-target" />
+                
+                <line x1="162" y1="268" x2="338" y2="268" stroke="#484f3d" stroke-width="0.8" opacity="0.25" />
+                <line x1="162" y1="305" x2="338" y2="305" stroke="#484f3d" stroke-width="0.8" opacity="0.25" />
+
+                <!-- Ψηφιακά Στοιχεία LCD (Μέσα στα όρια της οθονης) -->
+                <g font-family="'Share Tech Mono', monospace" fill="#1d2117" font-weight="bold">
+                  <!-- Ζώνη 1: Mode, Ημέρα & Ημερομηνία -->
+                  <text id="lcd-mode-txt" x="175" y="258" font-size="13" text-anchor="start">CLOCK</text>
+                  <text id="lcd-day-txt" x="280" y="258" font-size="13" text-anchor="end">FR</text>
+                  <text id="lcd-date-txt" x="325" y="258" font-size="13" text-anchor="end">19</text>
+
+                  <!-- Ζώνη 2: Δευτερόλεπτα (Μόνο δευτερόλεπτα) -->
+                  <text id="lcd-sec-txt" x="250" y="296" font-size="25" text-anchor="middle">30</text>
+
+                  <!-- Ζώνη 3: Κύρια Ώρα (ΩΩ:ΛΛ) -->
+                  <text id="lcd-main-txt" x="250" y="352" font-size="44" text-anchor="middle">19:30</text>
+                </g>
+              </g>
+
+              <!-- === ΠΛΑΪΝΕΣ ΕΝΔΕΙΞΕΙΣ === -->
+              <circle cx="153" cy="250" r="3.5" fill="#e2231a" />
+              <circle cx="153" cy="375" r="3.5" fill="#e2231a" />
+              <circle cx="352" cy="250" r="3.5" fill="#e2231a" />
+              <circle cx="352" cy="380" r="3.5" fill="#e2231a" />
+
+              <text x="151" y="263" fill="#ffffff" font-size="8.5" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1" transform="rotate(90 151 263)">ADJUST</text>
+              <text x="151" y="337" fill="#ffffff" font-size="8.5" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1" transform="rotate(90 151 337)">MODE</text>
+              <text x="349" y="261" fill="#ffffff" font-size="8.5" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1" transform="rotate(90 349 261)">LIGHT</text>
+              <text x="349" y="338" fill="#ffffff" font-size="8.5" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="1" transform="rotate(90 349 338)">ALARM</text>
+
+              <!-- === WATER WR RESIST === -->
+              <g id="water-resist" transform="translate(250, 395)" text-anchor="middle">
+                <text x="-48" y="4" fill="#e2231a" font-size="10" font-family="Arial, sans-serif" font-weight="900" letter-spacing="1.2">WATER</text>
+                <rect x="-18" y="-7" width="26" height="14" rx="3" fill="none" stroke="#e2231a" stroke-width="1.8" />
+                <text x="-5" y="4" fill="#e2231a" font-size="10" font-family="Arial, sans-serif" font-weight="900">WR</text>
+                <text x="44" y="4" fill="#e2231a" font-size="10" font-family="Arial, sans-serif" font-weight="900" letter-spacing="1.2">RESIST</text>
+              </g>
+
+              <!-- === BLUETOOTH === -->
+              <text x="250" y="433" fill="#ffb000" font-size="12" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="bold" font-style="italic" letter-spacing="0.5" text-anchor="middle">Bluetooth</text>
+            </svg>
+          </div>
+
+          <!-- Πάνελ Ελέγχου Ρολογιού & Λειτουργιών (Κουμπιά) -->
+          <div class="watch-controls">
+            
+            <!-- Επιλογή Λειτουργίας -->
+            <div class="control-group">
+              <button id="btn-mode-clock" class="explore-btn active">CLOCK</button>
+              <button id="btn-mode-stopwatch" class="explore-btn">STOPWATCH</button>
+              <button id="btn-mode-countdown" class="explore-btn">COUNTDOWN</button>
+            </div>
+
+            <!-- Κουμπιά Ενεργειών (Start, Stop, κλπ.) -->
+            <div class="control-group action-group">
+              <button id="btn-start" class="explore-btn">START</button>
+              <button id="btn-stop" class="explore-btn">STOP</button>
+              <button id="btn-reset" class="explore-btn">RESET</button>
+              <button id="btn-light" class="explore-btn">LIGHT</button>
+            </div>
+
+            <!-- Ρυθμίσεις Αντίστροφης Μέτρησης (Εμφανίζονται μόνο στο Countdown Mode) -->
+            <div id="countdown-settings" class="control-group settings-group" style="display: none;">
+              <label for="input-minutes">SET MINUTES:</label>
+              <input type="number" id="input-minutes" min="1" max="99" value="5">
+              <button id="btn-set-countdown" class="explore-btn">SET</button>
+            </div>
+
+          </div>
+          
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Εσωτερικό JavaScript για την πλήρη λειτουργία του Ρολογιού -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // LCD Elements
+      const modeTxt = document.getElementById("lcd-mode-txt");
+      const dayTxt = document.getElementById("lcd-day-txt");
+      const dateTxt = document.getElementById("lcd-date-txt");
+      const secTxt = document.getElementById("lcd-sec-txt");
+      const mainTxt = document.getElementById("lcd-main-txt");
+      const backlightScreen = document.getElementById("lcd-backlight-target");
+
+      // Buttons
+      const btnClock = document.getElementById("btn-mode-clock");
+      const btnStopwatch = document.getElementById("btn-mode-stopwatch");
+      const btnCountdown = document.getElementById("btn-mode-countdown");
+      const btnStart = document.getElementById("btn-start");
+      const btnStop = document.getElementById("btn-stop");
+      const btnReset = document.getElementById("btn-reset");
+      const btnLight = document.getElementById("btn-light");
+      const countdownSettings = document.getElementById("countdown-settings");
+      const inputMinutes = document.getElementById("input-minutes");
+      const btnSetCountdown = document.getElementById("btn-set-countdown");
+
+      // App State
+      let currentMode = "CLOCK"; // CLOCK, STOPWATCH, COUNTDOWN
+      let clockInterval = null;
+
+      // Stopwatch variables
+      let swInterval = null;
+      let swStartTime = 0;
+      let swElapsedTime = 0;
+      let swRunning = false;
+
+      // Countdown variables
+      let cdInterval = null;
+      let cdTimeRemaining = 300000; // 5 mins in ms
+      let cdRunning = false;
+      let alarmActive = false;
+      let alarmBlinkInterval = null;
+
+      // Web Audio API για το Alarm Beep (Χωρίς εξωτερικά αρχεία)
+      let audioCtx = null;
+      function playAlarmBeep() {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(2048, audioCtx.currentTime); 
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.15);
+      }
+
+      // 1. ΡΟΛΟΪ (CLOCK MODE)
+      function updateClock() {
+        if (currentMode !== "CLOCK") return;
+        
+        const now = new Date();
+        const days = ["SU", "MO", "TU", "WE", "TH", "FR", "SA"];
+        
+        const day = days[now.getDay()];
+        const date = String(now.getDate()).padStart(2, '0');
+        const hh = String(now.getHours()).padStart(2, '0');
+        const mm = String(now.getMinutes()).padStart(2, '0');
+        const ss = String(now.getSeconds()).padStart(2, '0');
+
+        modeTxt.textContent = "CLOCK";
+        dayTxt.textContent = day;
+        dateTxt.textContent = date;
+        secTxt.textContent = ss;
+        mainTxt.textContent = `${hh}:${mm}`;
+      }
+
+      function startClock() {
+        stopAllIntervals();
+        currentMode = "CLOCK";
+        countdownSettings.style.display = "none";
+        
+        btnClock.classList.add("active");
+        btnStopwatch.classList.remove("active");
+        btnCountdown.classList.remove("active");
+
+        updateClock();
+        clockInterval = setInterval(updateClock, 1000);
+      }
+
+      // 2. ΧΡΟΝΟΜΕΤΡΟ (STOPWATCH MODE)
+      function updateStopwatchDisplay() {
+        const totalMs = swElapsedTime;
+        const mins = Math.floor(totalMs / 60000);
+        const secs = Math.floor((totalMs % 60000) / 1000);
+        const centis = Math.floor((totalMs % 1000) / 10); // 0-99 centiseconds
+
+        modeTxt.textContent = "ST.W";
+        dayTxt.textContent = "SW";
+        dateTxt.textContent = "00";
+        secTxt.textContent = String(centis).padStart(2, '0');
+        mainTxt.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+
+      // 3. ΑΝΤΙΣΤΡΟΦΗ ΜΕΤΡΗΣΗ (COUNTDOWN MODE)
+      function updateCountdownDisplay() {
+        const totalMs = cdTimeRemaining;
+        const mins = Math.floor(totalMs / 60000);
+        const secs = Math.floor((totalMs % 60000) / 1000);
+
+        modeTxt.textContent = "TMR";
+        dayTxt.textContent = "TR";
+        dateTxt.textContent = "00";
+        secTxt.textContent = String(secs).padStart(2, '0');
+        mainTxt.textContent = `${String(mins).padStart(2, '0')}:00`; // Standard Casio display style
+      }
+
+      function triggerAlarm() {
+        alarmActive = true;
+        let blink = false;
+        
+        // Blink οπίσθιου φωτισμού και ηχητικό σήμα (Alarm)
+        alarmBlinkInterval = setInterval(() => {
+          blink = !blink;
+          backlightScreen.style.fill = blink ? "#38b0ff" : "url(#lcd-grad)";
+          if (blink) {
+            playAlarmBeep();
+          }
+        }, 300);
+
+        // Αυτόματη απενεργοποίηση alarm μετά από 10 δευτερόλεπτα
+        setTimeout(stopAlarm, 10000);
+      }
+
+      function stopAlarm() {
+        if (!alarmActive) return;
+        alarmActive = false;
+        clearInterval(alarmBlinkInterval);
+        backlightScreen.style.fill = "url(#lcd-grad)";
+      }
+
+      // ΓΕΝΙΚΟΙ ΕΛΕΓΧΟΙ (START / STOP / RESET / LIGHT)
+      function stopAllIntervals() {
+        clearInterval(clockInterval);
+        clearInterval(swInterval);
+        clearInterval(cdInterval);
+        stopAlarm();
+      }
+
+      btnClock.addEventListener("click", startClock);
+
+      btnStopwatch.addEventListener("click", () => {
+        stopAllIntervals();
+        currentMode = "STOPWATCH";
+        countdownSettings.style.display = "none";
+
+        btnClock.classList.remove("active");
+        btnStopwatch.classList.add("active");
+        btnCountdown.classList.remove("active");
+
+        updateStopwatchDisplay();
+      });
+
+      btnCountdown.addEventListener("click", () => {
+        stopAllIntervals();
+        currentMode = "COUNTDOWN";
+        countdownSettings.style.display = "flex";
+
+        btnClock.classList.remove("active");
+        btnStopwatch.classList.remove("active");
+        btnCountdown.classList.add("active");
+
+        updateCountdownDisplay();
+      });
+
+      btnStart.addEventListener("click", () => {
+        stopAlarm();
+        if (currentMode === "STOPWATCH" && !swRunning) {
+          swRunning = true;
+          swStartTime = Date.now() - swElapsedTime;
+          swInterval = setInterval(() => {
+            swElapsedTime = Date.now() - swStartTime;
+            updateStopwatchDisplay();
+          }, 10);
+        } else if (currentMode === "COUNTDOWN" && !cdRunning && cdTimeRemaining > 0) {
+          cdRunning = true;
+          const cdStartTime = Date.now();
+          const initialTime = cdTimeRemaining;
+          cdInterval = setInterval(() => {
+            const elapsed = Date.now() - cdStartTime;
+            cdTimeRemaining = Math.max(0, initialTime - elapsed);
+            updateCountdownDisplay();
+
+            if (cdTimeRemaining <= 0) {
+              clearInterval(cdInterval);
+              cdRunning = false;
+              triggerAlarm();
+            }
+          }, 100);
+        }
+      });
+
+      btnStop.addEventListener("click", () => {
+        stopAlarm();
+        if (currentMode === "STOPWATCH" && swRunning) {
+          swRunning = false;
+          clearInterval(swInterval);
+        } else if (currentMode === "COUNTDOWN" && cdRunning) {
+          cdRunning = false;
+          clearInterval(cdInterval);
+        }
+      });
+
+      btnReset.addEventListener("click", () => {
+        stopAlarm();
+        if (currentMode === "STOPWATCH") {
+          swRunning = false;
+          clearInterval(swInterval);
+          swElapsedTime = 0;
+          updateStopwatchDisplay();
+        } else if (currentMode === "COUNTDOWN") {
+          cdRunning = false;
+          clearInterval(cdInterval);
+          cdTimeRemaining = parseInt(inputMinutes.value, 10) * 60000 || 300000;
+          updateCountdownDisplay();
+        }
+      });
+
+      btnSetCountdown.addEventListener("click", () => {
+        stopAlarm();
+        cdRunning = false;
+        clearInterval(cdInterval);
+        const mins = Math.max(1, Math.min(99, parseInt(inputMinutes.value, 10)));
+        inputMinutes.value = mins;
+        cdTimeRemaining = mins * 60000;
+        updateCountdownDisplay();
+      });
+
+      // BACKLIGHT (Κουμπί LIGHT)
+      let lightTimeout = null;
+      btnLight.addEventListener("click", () => {
+        clearTimeout(lightTimeout);
+        // Φωτισμός οθόνης με γαλάζιο χρώμα (Illuminator style)
+        backlightScreen.style.fill = "#38b0ff";
+        
+        lightTimeout = setTimeout(() => {
+          backlightScreen.style.fill = "url(#lcd-grad)";
+        }, 3000); // Κρατάει αναμμένο για 3 δευτερόλεπτα
+      });
+
+      // Εκκίνηση της σελίδας σε Clock Mode
+      startClock();
+    });
+  </script>
+</body>
+</html>
