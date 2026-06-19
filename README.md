@@ -6,15 +6,6 @@ Welcome to the repository of my personal academic portfolio, designed as an inte
 
 ---
 
-## 📖 Table of Contents
-- [Project Overview](#project-overview)
-- [Directory Structure](#directory-structure)
-- [Key Sections & Pages](#key-sections--pages)
-- [Technologies Used](#technologies-used)
-- [Deployment & Local Development](#deployment--local-development)
-
----
-
 ## 🔍 Project Overview
 This portfolio is built with a modular, semantic approach. It avoids heavy front-end frameworks to maintain lightweight rendering and high compatibility across modern browsers, relying on clean HTML5, responsive CSS layouts, and vanilla JavaScript.
 
