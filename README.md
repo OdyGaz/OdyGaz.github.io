@@ -1,74 +1,54 @@
-# 📖 Editorial Academic Portfolio (Vol. 1) | Odysseas Gazelis
+# Academic & Scientific Portfolio | Odhisea Gazeli
 
-Welcome to the official repository of my personal portfolio, styled as a premium physical magazine.
+Welcome to the repository of my personal academic portfolio, designed as an interactive, clean, magazine-style digital showcase. This site highlights my research, teaching materials, scientific projects, and technical methodology in **Plasma Physics**, **Photonics**, and **Analytical Chemistry**.
 
-🔗 **Live Website:** [odygaz.github.io](https://odygaz.github.io/)
-
----
-
-## 🎨 The Concept: "Portfolio Vol. 1"
-Unlike standard bootstrap-based personal websites, this portfolio is built with an **editorial/magazine layout** in mind.
-Emphasizing clean grids, elegant serif typography (`Playfair Display` & `Inter`), natural paper-textured backgrounds, 
-and asymmetrical spacing, it replicates the feel of a printed science and arts publication.
+🔗 **Live Website:** [https://odygaz.github.io/](https://odygaz.github.io/)
 
 ---
 
-## 🚀 Key Features & Pages
-
-- **Interactive Magazine Cover (`index.html`)**
-  - Features a clean, physical cover style with subtle animations.
-  - A dynamic floating bubble interaction that serves as a gamified menu.
-- **Curriculum Vitae (`pages/cv.html`)**
-  - Complete academic background, publications list, and software skills.
-  - Interactive filterable categories (e.g., conferences, grants).
-  - Embedded image-modal triggers for certifications and credentials.
-- **Publications & Gamified Papers (`pages/publications.html`)**
-  - Comprehensive list of peer-reviewed journal articles.
-  - An interactive **"Hidden Object" bubble game** that dynamically highlights and links to articles on click without triggering browser popup-blockers.
-- **Teaching & Visual Physics (`pages/teaching.html`)**
-  - Academic teaching history.
-  - Embedded video simulations (AniPhys animations).
-- **Portfolio & Art (`pages/portfolio.html`)**
-  - **Mechanical Automata:** Showcases physical kinetic sculptures in an elegant dual-photo grid.
-  - **Fine Art & Drawings:** A clean museum-catalog grid of simple sketches.
-  - **Scientific Posters:** High-resolution PNG layouts that open directly in a new tab for zoomable, crystal-clear readability.
-- **Digital Bookshelf (`pages/library.html`)**
-  - A curated list of reference textbooks.
-  - Uses smart CSS grids with immediate fallback cover image handling (`onerror` fallback).
+## 📖 Table of Contents
+- [Project Overview](#project-overview)
+- [Directory Structure](#directory-structure)
+- [Key Sections & Pages](#key-sections--pages)
+- [Technologies Used](#technologies-used)
+- [Deployment & Local Development](#deployment--local-development)
 
 ---
 
-## 🛠️ Tech Stack & Architecture
-
-- **Languages:** HTML5, CSS3, JavaScript (ES6+).
-- **Architecture:** Zero-dependency, vanilla frontend for extremely lightweight assets and sub-second load times.
-- **Hosting:** Deployable directly via GitHub Pages.
+## 🔍 Project Overview
+This portfolio is built with a modular, semantic approach. It avoids heavy front-end frameworks to maintain lightweight rendering and high compatibility across modern browsers, relying on clean HTML5, responsive CSS layouts, and vanilla JavaScript.
 
 ---
 
-## 📂 Repository Structure
+## 📁 Directory Structure
+Below is the architectural layout of this repository, illustrating how assets and pages are organized:
 
 ```text
+OdyGaz.github.io/
 ├── assets/
 │   ├── css/
-│   │   └── style.css          # Main editorial styling (CV, Grid, Pages)
-│   ├── documents/
-│   │   └── cv-odisea-gazeli.pdf
+│   │   ├── sketchbook.css              # Styling for the interactive Sketchbook
+│   │   └── style.css                   # Core stylesheet (typography, layouts, watch controls)
 │   ├── images/
-│   │   ├── books/             # Textbook thumbnails
-│   │   ├── posters/           # High-resolution scientific poster PNGs
-│   │   ├── drawings/          # Fine art images
-│   │   ├── automata/          # Mechanical creation images
-│   │   ├── avatar.png
-|   |   ├── ...
-│   │   └── homepage-cover.png
+│   │   ├── automata/                    # Images for cellular automata animations
+│   │   ├── books/                       # Curated book cover assets for the Library
+│   │   ├── drawings/                    # Digital and physical art sketches
+│   │   ├── portfolio/                   # Scientific project & laboratory figures
+│   │   ├── posters/                     # Academic poster graphics
+│   │   └── ...                          ...
 │   └── js/
-│       └── main.js            # Interactive bubble game & CV logic
+│       ├── main.js                      # Core JS logic
+│       └── sketchbook.js                # Interactive grid and canvas dynamics
 ├── pages/
-│   ├── cv.html
-│   ├── library.html
-│   ├── portfolio.html
-│   ├── publications.html
-│   └── teaching.html
-└── index.html                 # Interactive cover page
-```
+│   ├── clock.html                       # Interactive Casio Retro Clock (Focus Time & Timers)
+│   ├── cv.html                          # Digital Academic Curriculum Vitae
+│   ├── fun-portfolio.html               # General/Creative portfolio showcase
+│   ├── library.html                     # "The Digital Bookshelf" reference bibliography
+│   ├── portfolio.html                   # Core research portfolio
+│   ├── publications.html                # Academic papers and conference listings
+│   ├── scientific-portfolio.html        # Targeted scientific portfolio section
+│   ├── sketchbook.html                  # Interactive physical & digital art display
+│   └── teaching.html                    # Interactive tutorials and physics animations
+├── .nojekyll                            # Bypasses Jekyll processing on GitHub Pages
+├── index.html                           # Homepage / Interactive cover
+└── README.md                            # Project documentation (this file)
